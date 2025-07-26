@@ -2,10 +2,11 @@
 My wife and I are both Yankees fans, but often people at work are discouraged from looking up sports scores. So I bulit a device that looks and works like a normal clock, but if you touch the screen it shows the live, latest info from the Yankees game. The result: a live MLB scoreboard that displays Yankees game info on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
 
 # Project Goal
-A wall-powered ESP32 scoreboard that:
+A wall-outlet powered ESP32 scoreboard that:
     Shows live Yankees game status
     Displays box scores (R / H / E)
     Displays current time with toggleable clock
+    Is reversable, so it can angle the display at 30 or 60 degress
     Supports touchscreen interaction to switch views, toggle settings, and rest the stored wifi info
 
 # Hardware
