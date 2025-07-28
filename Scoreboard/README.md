@@ -1,5 +1,7 @@
 # Scoreboard
-My wife and I are both Yankees fans, but often people at work are discouraged from looking up sports scores. So I bulit a device that looks and works like a normal clock, but if you touch the screen it shows the live, latest info from the Yankees game. The result: a live MLB scoreboard that displays Yankees game info on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
+My wife and I are both Yankees fans, but often we'll be busy and unable to watch an entire game...or sometimes we just wanna know when first pitch is happening. Instead of using the computer or our phones, I thought it'd be nice to have a small, unobtrusive device that looks totally normal on an office desk, while still letting us know the latest on the Yankees.
+
+So I bulit a device that looks and works like a normal clock, but if you touch the screen it shows the live, latest info from the Yankees game. The result: a live MLB scoreboard that displays Yankees game info on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
 
 # Project Goal
 A wall-outlet powered ESP32 scoreboard that:
@@ -47,3 +49,9 @@ Board Specs: Stored in Repo
 Full ESP32 sketch: ScoreboardPrototype.ino
 Full Fusion Archive: Scoreboard.f3d
 STL files of enclosure and bezel: Scoreboard.stl
+
+# Potential Future Features
+Allow users to adjust brightness of the various displays in the settings and only with long or short screen taps
+Allow users to follow any MLB team they want (configuring that in the CP when getting initially set up
+Add other sports as well (NFL, NBA, MLS, NHL, F1)
+Add a sneaky, unobtrusive icon to the clock screen to indicate a game is currently being played
