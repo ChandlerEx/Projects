@@ -94,4 +94,4 @@ Side View
 - Monitoring and tracking data uploaded to a cloud hosted site (showing moisture status and last time it was watered)
 - Menu of calibration options for the user (for dry/wet, and particular to the plant family)
 - Further development on sleep mode, to drive down power usage 
-- A rubber gasket to more securely hold the sensor in the enclousre, and prevent accidental water damage
+- A rubber gasket to more securely hold the sensor in the enclosure, and prevent accidental water damage
