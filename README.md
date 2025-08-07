@@ -21,5 +21,5 @@ They’re documented here both as a personal portfolio and as a resource for any
 - 3D printing with different filaments (PLA, PETG)
 
 ## About Me
-I’m Chandler Friedman, an IT pro turned maker, building a portfolio of embedded electronics builds that combine functional hardware, thoughtful design, and clean documentation. 
+I’m Chandler, an IT pro turned maker, building a portfolio of embedded electronics builds that combine functional hardware, thoughtful design, and clean documentation. 
 My aim is to create devices that are both technically solid, visually appealing, and suitable for real-world use.
