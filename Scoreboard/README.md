@@ -1,6 +1,6 @@
 <img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" width="300"/>  <img src="https://github.com/ChandlerEx/Projects/blob/a76d304cf0fb3020f3d13f72d8a12cddec5b9524/Scoreboard/ScoreboardInUse2.jpg" alt="ScoreboardInUse2" width="314"/><br>
 # Scoreboard
-My wife and I are both Yankees fans, but often we'll be busy and unable to watch an entire game...or sometimes we just wanna know when first pitch is happening or what the score is.<br>
+I live in a New York Yankees supporting household, but often we'll be busy and unable to watch an entire game. Sometimes we just wanna know when first pitch is happening or what the score is without having to tune in or check our phones.<br>
 
 The initial idea was a module that plugged into the wall, stayed at the wall outlet, and made a sound if there was a homerun or the Yankees won. That evolved as I realized how intrusive that could be, especially in a home office. Then, I thought, maybe it'd be nice to have a small, unobtrusive device that looks totally normal on an office desk, while still letting us know the latest on the Yankees.<br>
 
