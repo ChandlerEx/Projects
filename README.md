@@ -18,7 +18,7 @@ They’re documented here both as a personal portfolio and as a resource for any
 - Battery management & low-power modes
 - PCB design & fabrication
 - 3D modeling in Fusion 360
-- 3D printing
+- 3D printing with different filaments (PLA, PETG)
 
 ## About Me
 I’m Chandler Friedman, an IT pro turned maker, building a portfolio of embedded electronics builds that combine functional hardware, thoughtful design, and clean documentation. 
