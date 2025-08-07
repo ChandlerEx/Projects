@@ -37,7 +37,7 @@ Finished Build<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" width="250"/>
 
 Enclosure Design<br>
-<img src="" alt="Enclosure Design" width="250"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/399ff246cf15ed012120ca76c62e85f4193714b3/Scoreboard/ScoreEnc.png" alt="Enclosure Design" width="250"/>
 
 # Lessons Learned
 Time zones suck. Using UTC parsing + Pacific re-shifting was necessary.
