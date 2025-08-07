@@ -76,10 +76,10 @@ Mapped to 0–100% for display
   - Full reboot ensures display and sensors reinitialize cleanly
 
 # Photos
-Top View
+Top View<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" width="250"/>
 
-Side View
+Side View<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" width="250"/>
 
 # Lessons Learned
