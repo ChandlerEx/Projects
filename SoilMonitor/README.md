@@ -1,23 +1,23 @@
 # Soil Monitor
-My wife waqs given a succulent as a gift, but she was worried about overwatering it - a commn way to kill a succulent. So, to help, I decided to build a 
-soil monitor and configure it specifically for succulents.
-
-The result is a battery-powered soil moisture monitor with a clear OLED display and ultra-low power sleep mode. Designed to be compact and dead-simple for 
-plant lovers who just want to know when to water.
+My wife got a succulent as a gift, but she was worried about overwatering it - a common way to kill a succulent! So, to help, I decided to build a 
+soil monitor and configure it specifically for succulents. 
+<br>The result is a battery-powered soil moisture monitor with a clear OLED display and ultra-low power sleep mode. 
+Designed to be compact and dead-simple for plant lovers who just want to know when to water.
+<br>This project features sensor calibration & analog input, power management, embedded UI design, and PCB-free low-power prototyping
 
 # Project Goal
-A compact, effective monitor for soil moisture with
-  A simple, low power display that shows
-      Moisture percentage
-      What to do with that info (Showing 'OK' or 'Needs water' depending on moisture) 
-      A battery icon that conveys visually how much power remains
-      A percentage display cpnveying how much power remains
-  A 3.7 V LiPo (charged via USB-C) for wireless power
-  A sleep mode that saves battery after inactivity and powers down much of the internals
-  A wake button to instantly get the onitor ready for work
-  Accurate soil readings via capacitive sensor
-  A tiny SoC to run the show (the Seeed Studio XIAO nRF52840 which is ~18mm X 21mm)
-  Recharge capability (built into the nRF52840)
+A compact, effective monitor for soil moisture coded in Arduino-style C++ with:
+- A simple, low power display that shows
+  - Moisture percentage
+  - What to do with that info (Showing 'OK' or 'Needs water' depending on moisture)
+  - A battery icon that conveys visually how much power remains
+  - A percentage display cOnveying how much power remains
+- A 3.7 V LiPo (charged via USB-C) for wireless power
+- A sleep mode that saves battery after inactivity and powers down much of the internals
+- A wake button to instantly get the onitor ready for work
+- Accurate soil readings via capacitive sensor
+- A tiny SoC to run the show (the Seeed Studio XIAO nRF52840 which is ~18mm X 21mm)
+- Recharge capability (built into the nRF52840)
 
 # Wiring
 
@@ -29,88 +29,69 @@ A compact, effective monitor for soil moisture with
 | Wake Button               | GPIO 2 → GND      |
 | Battery                   | BAT+ pad + GND pin|
 
-![Wiring Diagram](https://github.com/ChandlerEx/Projects/blob/891a760c9f960f25a479301b3d8ec1b8d20b8800/SoilMonitor/SoilMonWiring.png)
+<img src="https://github.com/ChandlerEx/Projects/blob/891a760c9f960f25a479301b3d8ec1b8d20b8800/SoilMonitor/SoilMonWiring.png" alt="Wiring Diagram" width="250"/>
 
 # Calibration
 Moisture readings are calibrated between:
-  *Dry:* `2665`
-  *Wet:* `1155`
-Mapped to 0–100% for display.
+- *Dry:* `2665`
+- *Wet:* `1155`
+  
+Mapped to 0–100% for display
 
 # Enclosure
-  Designed in Fusion 360 (
-- Custom 3D-printed shell with a translucent PETG window
-- Bottom plate removable to access LiPo battery
-- 
+- Designed in Fusion 360 
+- Custom 3D-printed shell with two bottom pieces that screw together and friction fit into the top piece
+- Ground and power rails for easier soldering
+- Holes with precise tolerances for display and wake button
+<img src="https://github.com/ChandlerEx/Projects/blob/edbfac9c0c20d4b20371947c66a9b49363ebae98/SoilMonitor/SoilMonEnc.png" alt="Enclosure" width="250"/>
 
 # Hardware
-ESP32-3248S035R (3.5" 320x480 TFT + resistive touch)
-Backlight dimming via GPIO21
-USB-powered; internal JST used for streamlined cable exit
-Enclosure custom designed from scratch and built with AM and Fusion 360
+- XIAO nRF52840 SoC
+- Liter 3.7V 400mAh 502035 LiPo Battery
+- Stemedu Capacitive Analog Soil Moisture Sensor
+- AITRIP 0.96 Inch OLED Display Module 12864
+- Gebildet 7mm Black Prewired Mini Momentary Push Button,SPST
+- Voltage Divider (2× 100kΩ - to scale battery voltage to safe ADC range)
 
-# Architecture Overview
-Coded in Arduino-style C++
-Touch panel: Short tap toggles display mode (score ↔ clock), long-press enters settings
-Display modes:
-    MODE_SCOREBOARD – live game status, scores, inning, runners on base
-    MODE_CLOCK – digital clock + date
-    MODE_SETTINGS – flip screen, toggle clock, reset Wi-Fi
-Data source: Live API from statsapi.mlb.com
-Auto-reset: Refreshes at 3AM PT or after long uptime; boots in seconds
-Wi-Fi setup: Built-in captive portal (WiFiManager) on first boot or reset
+# Firmware Logic Flow
+- Startup
+  - Initializes I2C display, ADCs, and button input
+  - Loads sleep/reset logic
+  - Reads initial moisture and battery values
+- Active Mode (awake)
+  - Refreshes OLED every 5 seconds
+  - Displays current moisture %, status message, battery level
+  - After 45 seconds of inactivity, powers down OLED and enters manual sleep
+- Sleep Mode
+  - Display powers down (SSD1306_DISPLAYOFF)
+  - Device idles until wake button is pressed
+- Wake Trigger
+  - GPIO2 is pulled LOW via button → NVIC_SystemReset() executes
+  - Full reboot ensures display and sensors reinitialize cleanly
 
 # Photos
-Early Proto
-![EarlyProto](https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a)
+Top View
+<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" width="250"/>
 
-Current Build
-![CurrentScoreboard](https://github.com/user-attachments/assets/ccfb72b6-7670-484e-8638-d6ba8d4bcea1)
+Side View
+<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" width="250"/>
 
 # Lessons Learned
-Time zones suck. Using UTC parsing + Pacific re-shifting was necessary.
-Some Yankees games end with no bottom of 9th — needed a failsafe for final detection.
-Display spacing and font choices were tuned for clarity on 240x320 screen.
-Adding the JST wires inside for power made the enclosure much, much cleaner than using USB
-Coding for the ESP32 is extremely touchy, especialy with fonts (FreeFont vs TextFont)
-Making enclosure adjustments when the front plane is at a 60 deg angle is brutal
+- I was about 90% done when I realized I need this to be smaller and to be able to run without being plugged in - maybe next time figure that out before you've completed wiring and software
+- Power and ground rails are a life saver on smaller projects like this
+- Screw holes and snap fits have much lower tolerances in smaller projects
+- Calibrating the sensor, and establishing good/bad ranges are sensor, environment, and plant dependent
+- Soldering on such a tiny board drastically increases the likelihood of a short/frying it entirely
 
 # Files
-MLB StatsAPI: https://statsapi.mlb.com
-Board Specs: Stored in Repo
-Full ESP32 sketch: ScoreboardPrototype.ino
-Full Fusion Archive: Scoreboard.f3d
-STL files of enclosure and bezel: Scoreboard.stl
+- Full ESP32 sketch: SoilMon.ino
+- Full Fusion Archive: SoilMon.f3d
+- STL files of all enclosure pieces: SoilMon.stl
+- Video of demo: SoilMonDemo.mp4
 
 # Potential Future Features
-Allow users to adjust brightness of the various displays in the settings and only with long or short screen taps
-Allow users to follow any MLB team they want (configuring that in the CP when getting initially set up
-Add other sports as well (NFL, NBA, MLS, NHL, F1)
-Add a sneaky, unobtrusive icon to the clock screen to indicate a game is currently being played# Soil Moisture Monitor 🌱
-
-
-
-
-*******************************************************************
-
-A battery-powered soil moisture monitor with a clear OLED display and ultra-low power sleep mode. Designed to be compact, cute, and dead-simple for plant lovers who just want to know when to water.
-
-![Soil Monitor in Enclosure](images/soil_monitor_photo.jpg)
-
-
-See full wiring diagram in `/docs/wiring.png`
-
-
-
-## Portfolio Intent
-
-This is one of three key projects in my electronics portfolio, alongside the [Scoreboard](https://github.com/yourname/scoreboard) and [StockPriceOrb](https://github.com/yourname/stockorb). It showcases:
-
-- Sensor calibration & analog input
-- Power management
-- Embedded UI design
-- PCB-free low-power prototyping
-
-## Media
-
-Photos and build video in `/media/`
+- A captive portal showing status of plant moisture (would need a different, likely larger chip for this)
+- Monitoring and tracking data uploaded to a cloud hosted site (showing moisture status and last time it was watered)
+- Menu of calibration options for the user (for dry/wet, and particular to the plant family)
+- Further development on sleep mode, to drive down power usage 
+- A rubber gasket to more securely hold the sensor in the enclousre, and prevent accidental water damage
