@@ -1,3 +1,6 @@
+<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" width="250"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/a76d304cf0fb3020f3d13f72d8a12cddec5b9524/Scoreboard/ScoreboardInUse2.jpg" alt="ScoreboardInUse2" width="250"/>
+
 # Scoreboard
 My wife and I are both Yankees fans, but often we'll be busy and unable to watch an entire game...or sometimes we just wanna know when first pitch is happening. Instead of using the computer or our phones, I thought it'd be nice to have a small, unobtrusive device that looks totally normal on an office desk, while still letting us know the latest on the Yankees.
 
