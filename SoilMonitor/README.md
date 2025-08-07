@@ -3,7 +3,11 @@ My wife got a succulent as a gift, but she was worried about overwatering it - a
 soil monitor and configure it specifically for succulents. 
 <br>The result is a battery-powered soil moisture monitor with a clear OLED display and ultra-low power sleep mode. 
 Designed to be compact and dead-simple for plant lovers who just want to know when to water.
-<br>This project features sensor calibration & analog input, power management, embedded UI design, and PCB-free low-power prototyping
+<br>This project demonstrates:
+- sensor calibration & analog input
+- power management
+- embedded UI design
+- PCB-free low-power prototyping
 
 # Project Goal
 A compact, effective monitor for soil moisture coded in Arduino-style C++ with:
@@ -11,10 +15,10 @@ A compact, effective monitor for soil moisture coded in Arduino-style C++ with:
   - Moisture percentage
   - What to do with that info (Showing 'OK' or 'Needs water' depending on moisture)
   - A battery icon that conveys visually how much power remains
-  - A percentage display cOnveying how much power remains
+  - A percentage display conveying how much power remains
 - A 3.7 V LiPo (charged via USB-C) for wireless power
 - A sleep mode that saves battery after inactivity and powers down much of the internals
-- A wake button to instantly get the onitor ready for work
+- A wake button to rapidly get the monitor ready for work
 - Accurate soil readings via capacitive sensor
 - A tiny SoC to run the show (the Seeed Studio XIAO nRF52840 which is ~18mm X 21mm)
 - Recharge capability (built into the nRF52840)
@@ -77,21 +81,21 @@ Side View
 <img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" width="250"/>
 
 # Lessons Learned
-- I was about 90% done when I realized I need this to be smaller and to be able to run without being plugged in - maybe next time figure that out before you've completed wiring and software
-- Power and ground rails are a life saver on smaller projects like this
-- Screw holes and snap fits have much lower tolerances in smaller projects
-- Calibrating the sensor, and establishing good/bad ranges are sensor, environment, and plant dependent
-- Soldering on such a tiny board drastically increases the likelihood of a short/frying it entirely
+- Define power & size constraints before wiring & coding
+- Power/ground rails simplify small builds
+- Small enclosures need tighter tolerance testing
+- Moisture thresholds are plant & environment specific
+- Soldering on tiny boards increases short-circuit risk
 
 # Files
-- Full ESP32 sketch: SoilMon.ino
-- Full Fusion Archive: SoilMon.f3d
-- STL files of all enclosure pieces: SoilMon.stl
-- Video of demo: SoilMonDemo.mp4
+- SoilMon.ino -- Full Arduino sketch
+- SoilMon.f3d -- Fusion 360 source
+- SoilMon.stl -- STL file for printing
+- SoilMonDemo.mp4 -- Video of demo
 
 # Potential Future Features
-- A captive portal showing status of plant moisture (would need a different, likely larger chip for this)
-- Monitoring and tracking data uploaded to a cloud hosted site (showing moisture status and last time it was watered)
-- Menu of calibration options for the user (for dry/wet, and particular to the plant family)
-- Further development on sleep mode, to drive down power usage 
-- A rubber gasket to more securely hold the sensor in the enclosure, and prevent accidental water damage
+- Captive portal for viewing moisture status over Wi-Fi
+- Cloud logging & last-watered tracking
+- User-set calibration menu
+- Deeper sleep modes for even longer battery life
+- Rubber gasket for sensor protection
