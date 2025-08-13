@@ -23,9 +23,10 @@
 6. **What the lights mean**
 * **Green** = positive change
 * **Red** = negative change
+* * **Solid Yellow** = Awaiting wifi info, typically on first start-up
 * *NOTE* Pulse speed increases with magnitude (≥1%, ≥2%, ≥3% tiers)
-* **Two blue flashes** indicate a network/parse failure.
-* **Solid Yellow** = Awaiting wifi info &#x20;
+* **Two blue flashes** indicate a network/parse failure.&#x20;
+
 
 # Feature list
 
