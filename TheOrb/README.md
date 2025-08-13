@@ -1,109 +1,134 @@
 <img src="https://github.com/ChandlerEx/Projects/blob/2fbad740882c20011538793ed7427ab86f700809/TheOrb/OrbThumb.jpg" alt="The Orb Thumbnail" width="200"/>
 
-# Soil Monitor
-My wife got a succulent as a gift, but she was worried about overwatering it - a common way to kill a succulent! So, to help, I decided to build a 
-soil monitor and configure it specifically for succulents. 
-<br>The result is a battery-powered soil moisture monitor with a clear OLED display and ultra-low power sleep mode. 
-Designed to be compact and dead-simple for plant lovers who just want to know when to water.
+# The Orb
+For years I've had a fasination with an old concept - ambient computing. The idea is to convey digital information in a sensory way that doesn't 
+rely on screens. I've had the idea in my head for as long as I can remember, but this pursuit provided an opportunity to bring it from brain to reality.
+The result is this innocuous looking orb on a small pedestal that conveys with color and pulsing whether a certain financial index, commodity, stock 
+or even crypto is up or down that day, and, by slowly pulsing the light, even conveys how drastic the change is.
 <br>This project demonstrates:
-- sensor calibration & analog input
-- power management
-- embedded UI design
-- PCB-free low-power prototyping
+- Custom PCB design
+- Integration of threaded fits and screw fits
+- Use of different kinds of filaments (PLA, PETG)
+- Double Reset Detector logic
 
 # Project Goal
-A compact, effective monitor for soil moisture coded in Arduino-style C++ with:
-- A simple, low power display that shows
-  - Moisture percentage
-  - What to do with that info (Showing 'OK' or 'Needs water' depending on moisture)
-  - A battery icon that conveys visually how much power remains
-  - A percentage display conveying how much power remains
-- A 3.7 V LiPo (charged via USB-C) for wireless power
-- A sleep mode that saves battery after inactivity and powers down much of the internals
-- A wake button to rapidly get the monitor ready for work
-- Accurate soil readings via capacitive sensor
-- A tiny SoC to run the show (the Seeed Studio XIAO nRF52840 which is ~18mm X 21mm)
-- Recharge capability (built into the nRF52840)
-
-# Wiring
-
-| Component                  | XIAO Pin          |
-|---------------------------|-------------------|
-| OLED (SSD1306, I2C)       | SDA → GPIO 4<br>SCL → GPIO 5 |
-| Moisture Sensor           | A1 (Pin 1)        |
-| Battery Voltage Divider   | A3 (Pin 3) via 100kΩ–100kΩ |
-| Wake Button               | GPIO 2 → GND      |
-| Battery                   | BAT+ pad + GND pin|
-
-<img src="https://github.com/ChandlerEx/Projects/blob/9a11e649d50762af672b37ba1d7330335580c16b/SoilMonitor/SoilMonBreadboard.jpg" alt="Soil Monitor Breadboard" width="300"/>
-
-<img src="https://github.com/ChandlerEx/Projects/blob/891a760c9f960f25a479301b3d8ec1b8d20b8800/SoilMonitor/SoilMonWiring.png" alt="Wiring Diagram" width="250"/>
-
-# Calibration
-Moisture readings are calibrated between:
-- *Dry:* `2665`
-- *Wet:* `1155`
-  
-Mapped to 0–100% for display
-
-# Enclosure
-- Designed in Fusion 360 
-- Custom 3D-printed shell with two bottom pieces that screw together and friction fit into the top piece
-- Ground and power rails for easier soldering
-- Holes with precise tolerances for display and wake button
-<img src="https://github.com/ChandlerEx/Projects/blob/edbfac9c0c20d4b20371947c66a9b49363ebae98/SoilMonitor/SoilMonEnc.png" alt="Enclosure" width="250"/>
+A plug-and-play desktop stock indicator that:
+- Shows market change percentage for a selected financial index, stock, or crypto holding via color and pulse speed
+- Allows quick Wi-Fi setup via a captive portal
+- Stores and remembers the selected ticker in EEPROM
+- Handles connection failures gracefully with visual feedback
+- Updates data every 30 seconds without needing user interaction
 
 # Hardware
-- XIAO nRF52840 SoC
-- Liter 3.7V 400mAh 502035 LiPo Battery
-- Stemedu Capacitive Analog Soil Moisture Sensor
-- AITRIP 0.96 Inch OLED Display Module 12864
-- Gebildet 7mm Black Prewired Mini Momentary Push Button,SPST
-- Voltage Divider (2× 100kΩ - to scale battery voltage to safe ADC range)
+- Microcontroller: ESP8266 D1 Mini (LOLIN/WEMOS-compatible)
+- LEDs: 7-LED WS2812B RGB ring
+- Power: Micro-USB 5V
+- Enclosure: 80mm glass dome with custom-printed base
+- Extras:
+-- 330 Ω resistor (in series from D4 → DIN)
+-- 1000 µF capacitor (across VCC and GND at LED ring)
 
-# Firmware Logic Flow
-- Startup
-  - Initializes I2C display, ADCs, and button input
-  - Loads sleep/reset logic
-  - Reads initial moisture and battery values
-- Active Mode (awake)
-  - Refreshes OLED every 5 seconds
-  - Displays current moisture %, status message, battery level
-  - After 45 seconds of inactivity, powers down OLED and enters manual sleep
-- Sleep Mode
-  - Display powers down (SSD1306_DISPLAYOFF)
-  - Device idles until wake button is pressed
-- Wake Trigger
-  - GPIO2 is pulled LOW via button → NVIC_SystemReset() executes
-  - Full reboot ensures display and sensors reinitialize cleanly
+# Architecture Overview
+- Language: Arduino-style C++
+- Startup Behavior:
 
-# Photos
-Top View<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" width="250"/>
+        Solid yellow boot color
 
-Side View<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" width="250"/>
+        If double reset is detected, Wi-Fi settings reset and captive portal starts
 
-# Lessons Learned
-- Define power & size constraints before wiring & coding
-- Power/ground rails simplify small builds
-- Small enclosures need tighter tolerance testing
-- Moisture thresholds are plant & environment specific
-- Soldering on tiny boards increases short-circuit risk
+        Captive portal allows user to enter:
 
-# Files
-- SoilMon.ino -- Full Arduino sketch
-- SoilMon.f3d -- Fusion 360 source
-- SoilMon.stl -- STL file for printing
-- SoilMonDemo.mp4 -- Video of demo
+            Wi-Fi SSID / password
 
-# Potential Future Features
-- Provide a broader set of inital indicators to track on WiFi setup screen
-- Make brightness easily adjustable (on initial config, or with a light sensor to 'read the room'
-- Add small screen to front of base showing indicator and current % change, possibly allowing multiple indicator tracking
-- Provide multiple glass orb designs (clear glass with design laser etched inside? Sqishy orbs? Logo-covered orbs?)
+            Stock ticker (defaults to SPY)
 
+        Ticker is stored in EEPROM
 
+    Data Fetch:
+
+        HTTPS GET to Finnhub API every 30 seconds
+
+        Calculates % change from previous close
+
+    LED Logic:
+
+        Green: positive change
+
+        Red: negative change
+
+        Pulse speed scales with volatility:
+
+            ≥ 3%: very fast pulse
+
+            ≥ 2%: fast pulse
+
+            ≥ 1%: slow pulse
+
+            < 1%: solid color
+
+    Error Handling:
+
+        Connection/data error: flashes blue
+
+        Persistent Wi-Fi failure: blue error loop until reset
+
+    Animations:
+
+        First data fetch: fades from yellow to new color
+
+        Subsequent updates: smooth brightness pulsing
+
+Visual Feedback Reference
+Event	LED Behavior
+Boot	Solid yellow
+Double reset detected	Yellow/blue alternating blinks
+Positive market change	Solid/pulsing green
+Negative market change	Solid/pulsing red
+Wi-Fi/data error	Two quick blue flashes
+Wi-Fi connection failed	Repeating 10× blue blink cycle
+Lessons Learned
+
+    Using ESP_DoubleResetDetector makes captive portal access easy without a physical button.
+
+    WiFiClientSecure with setInsecure() is essential for quick HTTPS on ESP8266.
+
+    EEPROM trimming and validation prevents storing corrupted tickers.
+
+    Pulse animations look far smoother when brightness modulation is sinusoidal.
+
+    A resistor + capacitor drastically improves LED stability and reduces flicker.
+
+Files
+
+    OrbCode_Final.ino — Full Arduino sketch
+
+    StockOrb.f3d — Fusion 360 enclosure design
+
+    StockOrb.stl — STL file for base/enclosure
+
+    Finnhub API — Live stock data source
+
+Potential Future Features
+
+    User-selectable LED brightness in captive portal
+
+    Multiple ticker rotation (e.g., SPY + a personal stock watchlist)
+
+    Wi-Fi signal strength indicator via LED pattern
+
+    Integration with cryptocurrency prices or market sentiment feeds
+
+    Auto-off during non-market hours to save power
+
+    MQTT/WebSocket mode for faster real-time updates
+
+    Cloud logging of market data with historical trend playback
+
+    E-paper or OLED module add-on for numeric display of price/percentage
+
+    Configurable pulse styles (fade, strobe, breathing) per user preference
+
+    Battery-powered portable version with sleep mode for travel use
 
 
 
