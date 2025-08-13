@@ -25,8 +25,8 @@ A plug-and-play desktop stock indicator that:
 - Power: Micro-USB 5V
 - Enclosure: 80mm glass dome with custom-printed base
 - Extras:
--- 330 Ω resistor (in series from D4 → DIN)
--- 1000 µF capacitor (across VCC and GND at LED ring)
+        - 330 Ω resistor (in series from D4 → DIN)
+        - 1000 µF capacitor (across VCC and GND at LED ring)
 
 # Architecture Overview
 - Language: Arduino-style C++
