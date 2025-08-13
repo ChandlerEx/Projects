@@ -1,5 +1,8 @@
 <img src="https://github.com/ChandlerEx/Projects/blob/2fbad740882c20011538793ed7427ab86f700809/TheOrb/OrbThumb.jpg" alt="The Orb Thumbnail" width="200"/>
 
+▶ See a video demonstration here: 
+<img src="https://github.com/ChandlerEx/Projects/blob/e3148534473ec9621d9463dd3f875371c3a7e7ef/TheOrb/TheOrb.mp4" alt="Demo Video" width="300"/>
+
 # The Orb
 For years I've had a fasination with an old concept - ambient computing. The idea is to convey digital information in a sensory way that doesn't 
 rely on screens. I've had the idea in my head for as long as I can remember, but this pursuit provided an opportunity to bring it from brain to reality.
