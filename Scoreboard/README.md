@@ -1,8 +1,6 @@
 # Scoreboard
-<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" width="300"/>  <img src="https://github.com/ChandlerEx/Projects/blob/a76d304cf0fb3020f3d13f72d8a12cddec5b9524/Scoreboard/ScoreboardInUse2.jpg" alt="ScoreboardInUse2" width="314"/><br>
-
-▶ See a video demonstration here: 
-<img src="https://github.com/ChandlerEx/Projects/blob/cca13c149783555bedcdf03dc522cc19f0749007/Scoreboard/ScoreboardVid.mp4" alt="Demo Video" width="300"/>
+Video demonstration:<br>
+[![Scoreboard Demo Video](https://img.youtube.com/vi/gKBhKu_5G0A/0.jpg)](https://www.youtube.com/watch?v=gKBhKu_5G0A)
 
 ## What it is
 The 'Scoreboard' looks and works like a typical digital clock with a covert function: touching the screen queries the MLB StatsAPI and displays live Yankees game info 
@@ -10,11 +8,13 @@ on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
 
 ## Photos
 Early Prototype (Used off-the-shelf enclosure)<br>
-<img src="https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a" alt="Early Prototype" width="250"/>
+<img src="https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a" alt="Early Prototype" height="250"/>
 
 Finished Build<br>
-<img src="https://github.com/user-attachments/assets/ccfb72b6-7670-484e-8638-d6ba8d4bcea1" alt="Finished Build" width="250"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" width="250"/>
+<img src="https://github.com/user-attachments/assets/ccfb72b6-7670-484e-8638-d6ba8d4bcea1" alt="Finished Build" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="200"/>  
+<img src="https://github.com/ChandlerEx/Projects/blob/a76d304cf0fb3020f3d13f72d8a12cddec5b9524/Scoreboard/ScoreboardInUse2.jpg" alt="ScoreboardInUse2" height="200"/>
 
 ## Bill of Materials
 | Item | Description | Notes |
