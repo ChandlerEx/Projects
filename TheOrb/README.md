@@ -1,4 +1,4 @@
-# The Orb - [Download the One Sheet (PDF)](https://github.com/ChandlerEx/Projects/blob/main/TheOrb/The%20Orb%20-%20One%20Sheet.pdf)
+# The Orb - [Download the One Sheet (PDF)](https://github.com/ChandlerEx/Projects/blob/main/TheOrb/The%20Orb%20-%20One%20Sheet.pdf?raw=true)
 
 Video demonstration - click thumbnail below: <br>
 [![Orb Demonstration](https://img.youtube.com/vi/3VyHg8dSKyA/0.jpg)](https://www.youtube.com/watch?v=3VyHg8dSKyA)
