@@ -1,4 +1,7 @@
-<img src="https://github.com/ChandlerEx/Projects/blob/825f767845b1f51373b4fc3cadaaf89885add228/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="150"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/825f767845b1f51373b4fc3cadaaf89885add228/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="200"/>
+
+▶ See a video demonstration here: 
+<img src="https://github.com/ChandlerEx/Projects/blob/da490656c7174ca725e0aa463e8dc51a4410ffbf/SoilMonitor/SoilMonDemo.mp4" alt="Demo Video" width="300"/>
 
 # Soil Monitor
 My wife got a succulent as a gift, but she was worried about overwatering it - a common way to kill a succulent! So, to help, I decided to build a 
