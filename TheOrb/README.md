@@ -3,13 +3,18 @@
 # The Orb
 For years I've had a fasination with an old concept - ambient computing. The idea is to convey digital information in a sensory way that doesn't 
 rely on screens. I've had the idea in my head for as long as I can remember, but this pursuit provided an opportunity to bring it from brain to reality.
-The result is this innocuous looking orb on a small pedestal that conveys with color and pulsing whether a certain financial index, commodity, stock 
+
+The result is an innocuous looking orb on a small pedestal that conveys with color and pulsing whether a certain financial index, commodity, stock 
 or even crypto is up or down that day, and, by slowly pulsing the light, even conveys how drastic the change is.
-<br>This project demonstrates:
-- Custom PCB design
-- Integration of threaded fits and screw fits
+
+This project demonstrates:
+- Shows market change percentage for a selected stock/index/crypto via color and pulse speed
+- Allows quick Wi-Fi setup via a captive portal
+- Handles connection failures gracefully with visual feedback
+- Integration of threaded and screw fits
 - Use of different kinds of filaments (PLA, PETG)
-- Double Reset Detector logic
+- Custom PCB design:
+<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbPCB.png" alt="Orb PCB" width="150"/>
 
 # Project Goal
 A plug-and-play desktop stock indicator that:
@@ -33,149 +38,112 @@ A plug-and-play desktop stock indicator that:
 - Startup Behavior:
   - Solid yellow boot color
   - If double reset is detected, Wi-Fi settings reset and captive portal starts
-  - Captive portal allows user to enter:
-      - Wi-Fi SSID / password
-      - Stock ticker (defaults to SPY)
-      - Ticker is stored in EEPROM
-  - Data Fetch:
-      - HTTPS GET to Finnhub API every 30 seconds
-      - Calculates % change from previous close
-  - LED Logic:
-      - Green: positive change
-      - Red: negative change
-      - Pulse speed scales with volatility:
-        - ≥ 3%: very fast pulse
-        - ≥ 2%: fast pulse
-        - ≥ 1%: slow pulse
-        - < 1%: solid color
+  - Captive portal allows user to enter: Wi-Fi SSID/password, stock ticker (defaults to SPY), ticker stored in EEPROM
+- Data Fetch:
+  - HTTPS GET to Finnhub API every 30 seconds
+  - Calculates % change from previous close
+- LED Logic:
+  - Green: positive change
+  - Red: negative change
+  - Pulse speed scales with volatility: ≥ 3%: very fast pulse; ≥ 2%: fast pulse; ≥ 1%: slow pulse
+  - Solid Yellow = Awaiting wifi info, typically on first start-up
+  - Two blue flashes indicate a network/parse failure. 
 
-    Error Handling:
-
-        Connection/data error: flashes blue
-
-        Persistent Wi-Fi failure: blue error loop until reset
-
-    Animations:
-
-        First data fetch: fades from yellow to new color
-
-        Subsequent updates: smooth brightness pulsing
-
-Visual Feedback Reference
-Event	LED Behavior
-Boot	Solid yellow
-Double reset detected	Yellow/blue alternating blinks
-Positive market change	Solid/pulsing green
-Negative market change	Solid/pulsing red
-Wi-Fi/data error	Two quick blue flashes
-Wi-Fi connection failed	Repeating 10× blue blink cycle
-Lessons Learned
-
-    Using ESP_DoubleResetDetector makes captive portal access easy without a physical button.
-
-    WiFiClientSecure with setInsecure() is essential for quick HTTPS on ESP8266.
-
-    EEPROM trimming and validation prevents storing corrupted tickers.
-
-    Pulse animations look far smoother when brightness modulation is sinusoidal.
-
-    A resistor + capacitor drastically improves LED stability and reduces flicker.
-
-Files
-
-    OrbCode_Final.ino — Full Arduino sketch
-
-    StockOrb.f3d — Fusion 360 enclosure design
-
-    StockOrb.stl — STL file for base/enclosure
-
-    Finnhub API — Live stock data source
-
-Potential Future Features
-
-    User-selectable LED brightness in captive portal
-
-    Multiple ticker rotation (e.g., SPY + a personal stock watchlist)
-
-    Wi-Fi signal strength indicator via LED pattern
-
-    Integration with cryptocurrency prices or market sentiment feeds
-
-    Auto-off during non-market hours to save power
-
-    MQTT/WebSocket mode for faster real-time updates
-
-    Cloud logging of market data with historical trend playback
-
-    E-paper or OLED module add-on for numeric display of price/percentage
-
-    Configurable pulse styles (fade, strobe, breathing) per user preference
-
-    Battery-powered portable version with sleep mode for travel use
+# Error Handling
+- Connection/data error: flashes blue
+- Persistent Wi-Fi failure: blue error loop until reset
+- Animations:
+  - First data fetch: fades from yellow to new color
+  - Subsequent updates: smooth brightness pulsing
 
 
+# Visual Feedback Reference
+| Event                  | LED Behavior                               |
+|------------------------|--------------------------------------------|
+| Boot                   | Solid yellow                               |
+| Double reset detected  | Yellow/blue alternating blinks             |
+| Positive change        | Solid/pulsing green                        |
+| Negative change        | Solid/pulsing red                          |
+| Wi-Fi/data error       | Two quick blue flashes                     |
+| Wi-Fi connection fail  | Repeating 10× blue blink cycle              |
+
+# Lessons Learned
+
+- When faced with several solutions, don't let analysis paralysis get the best of you
+- Using `ESP_DoubleResetDetector` makes captive portal access easy without a physical button.
+- `WiFiClientSecure` with `setInsecure()` is essential for quick HTTPS on ESP8266.
+- EEPROM trimming and validation prevents storing corrupted tickers.
+- Pulse animations look far smoother when brightness modulation is sinusoidal.
+- A resistor + capacitor drastically improves LED stability and reduces flicker.
+
+# Files
+- `InfoOrb.ino` — Full Arduino sketch
+- `TheOrb.f3d` — Fusion 360 enclosure design
+- `TheOrb.stl` — STL file for base/enclosure
+- [Finnhub API](https://finnhub.io) — Live stock data source
+
+# Potential Future Features
+- User-selectable LED brightness in captive portal  
+- Multiple ticker rotation (e.g., SPY + a personal stock watchlist)  
+- Auto-off or auto-dim during non-market hours to save power  
+- E-paper or OLED module add-on for numeric display of price/percentage  
+- Configurable pulse styles (fade, strobe, breathing) per user preference  
+
+# Photos (Placeholders)
+**Early Prototype**  
+<img src="https://github.com/ChandlerEx/Projects/blob/e93dbe359cb56c9a379545c0b2fdb04d66260b8e/TheOrb/OrbPrototype.jpg" alt="Orb Prototype" width="200"/>
+
+**Enclosure Design**  
+<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbEnc.png" alt="Orb Enclosure" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/49efa33ea989afc09e3a05c3a19611a23c8cd73c/TheOrb/OrbEnc2.png" alt="Orb Enclosure 2" height="200"/>
+
+**Finished Build**  
+<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbUnassembled.jpg" alt="Orb Unassembled" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbOpened.jpg" alt="Orb Opened" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbBack.jpg" alt="Orb Back" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbThumb.jpg" alt="Orb Complete" height="200"/>
 
 # Quick start (new user workflow)
-
-1. **Power up and join setup Wi-Fi**
-* On boot the firmware starts WiFiManager and opens an AP named **`Orb_Setup`** for provisioning. Connect to that network
-* to enter your Wi-Fi credentials and the **“Stock Ticker (default: SPY)”** field. &#x20;
-
-2. **(Optional) Reconfigure later**
-* Performing a **double-reset** triggers configuration mode: settings are cleared, the `StockOrb_Setup` portal opens again,
-* and the entered ticker is saved. (DoubleResetDetector timeout is set to 3.) &#x20;
-
-3. **Ticker storage & fallback**
-* The selected ticker is persisted to EEPROM; on normal boots the orb uses the saved value. If the stored value is
-* invalid, it **falls back to `SPY`**. &#x20;
-
-4. **First data pull**
-* After setup, the orb **immediately fetches** market data once and logs the final ticker to Serial.&#x20;
-
-5. **Ongoing updates**
-* The orb refreshes data **every 30 seconds** and animates continuously.&#x20;
-  
-6. **What the lights mean**
-* **Green** = positive change
-* **Red** = negative change
-* * **Solid Yellow** = Awaiting wifi info, typically on first start-up
-* *NOTE* Pulse speed increases with magnitude (≥1%, ≥2%, ≥3% tiers)
-* **Two blue flashes** indicate a network/parse failure.&#x20;
-
-
+* **Power up and join setup Wi-Fi**
+  - On boot the firmware starts WiFiManager and opens an AP named 'Orb_Setup' for provisioning. Connect to that network, direct your browser
+to 192.168.4.1, enter your Wi-Fi credentials and populatethe Stock Ticker (default: SPY) field.
+* **Reconfiguring later**
+  - Performing a double-reset triggers configuration mode: settings are cleared, the 'Orb_Setup' portal opens again, and the entered ticker is saved.
+* **Ticker storage & fallback**
+  - The selected ticker is persisted to EEPROM; on normal boots the orb uses the saved value. If the stored value is invalid, it falls back to 'SPY'.
+* **First data pull**
+  - After setup, the orb immediately fetches market data once and logs the final ticker to Serial.
+* **Ongoing updates**
+  * The orb refreshes data every 30 seconds and animates continuously.
+* **What the lights mean**
+  * **Green** = positive change
+  * **Red** = negative change
+  * **Solid Yellow** = Awaiting wifi info, typically on first start-up
+  * *NOTE* Pulse speed increases with magnitude (≥1%, ≥2%, ≥3% tiers)
+  * **Two blue flashes** indicate a network/parse failure.
 # Feature list
-
 * **Target & LED hardware**
-  * Uses an ESP8266 (D1 Mini) with an Adafruit NeoPixel and a ring of 7 LEDs on pin D4 (GRB, 800 kHz). Brightness is set to 60 at startup. &#x20;
-
+  * Uses an ESP8266 (D1 Mini) with an Adafruit NeoPixel and a ring of 7 LEDs on pin D4 (GRB, 800 kHz). Brightness is set to 60 at startup. 
 * **Wi-Fi provisioning & reconfiguration**
-  * WiFiManager portal **`Orb_Setup`** for first-time setup and later changes;
-  * includes a custom parameter for Stock Ticker (default: "SPY", to track the S&P500) Can also be used to track crypto, Individual stocks, even commodities
-  * DoubleResetDetector (using button on back of base) puts the device back into setup mode and clears saved settings.  &#x20;
-
+  * WiFiManager portal 'Orb_Setup' for first-time setup and later changes;
+  * includes a custom parameter for Stock Ticker (default: 'SPY', to track the S&P500) Can also be used to track crypto, individual stocks, even commodities
+  * DoubleResetDetector (using button on back of base) puts the device back into setup mode and clears saved settings.  
 * **Persistent configuration**
-  * EEPROM initialized to 64 bytes; ticker stored starting at address **0** via `saveTickerToEEPROM()` / `readTickerFromEEPROM()`.
-  * Invalid storage auto-reverts to **SPY**. (Save loop writes up to **9 characters**.)   &#x20;
-
+  * EEPROM initialized to 64 bytes; ticker stored starting at address 0 via 'saveTickerToEEPROM()' / 'readTickerFromEEPROM()'.
+  * Invalid storage auto-reverts to SPY. (Save loop writes up to 9 characters.) 
 * **Data source & security**
-  * Fetches quotes from Finnhub’s `/api/v1/quote` endpoint using HTTPS via `WiFiClientSecure` (certificate checking disabled with `setInsecure()`), and `ESP8266HTTPClient`. &#x20;
-
+  * Fetches quotes from Finnhub’s '/api/v1/quote' endpoint using HTTPS via 'WiFiClientSecure' (certificate checking disabled with 'setInsecure()'), and 'ESP8266HTTPClient'.
 * **Update cadence**
-  * Immediate fetch on boot, then 30-second polling loop. &#x20;
-
+  * Immediate fetch on boot, then 30-second polling loop. 
 * **Parsing & signal calculation**
-  * Parses JSON fields `c` (current) and `pc` (previous close), computes percent change `(c - pc) / pc * 100`.&#x20;
-
+  * Parses JSON fields 'c' (current) and 'pc' (previous close), computes percent change '(c - pc) / pc * 100'.
 * **Color logic**
-  * **Green** for ≥0% change; **Red** for <0%.&#x20;
-
+  * Green for ≥0% change; Red for <0%.
 * **Magnitude-based pulsing**
   * Pulse speed scales with absolute change: ≥3% → 30, ≥2% → 50, ≥1% → 80, else solid.
-  * Animation uses a sine-based brightness wave clamped to 50–100% for a smooth breathing effect. &#x20;
-
+  * Animation uses a sine-based brightness wave clamped to 50–100% for a smooth breathing effect.
 * **Error feedback**
-  * Any HTTP/connection/parse failure calls `flashBlueError()` which blinks blue twice. &#x20;
-
+  * Any HTTP/connection/parse failure calls 'flashBlueError()' which blinks blue twice. 
 * **Serial diagnostics**
-  * Verbose logs include the final ticker, request URL, HTTP status, payload, and computed market change %.   &#x20;
+  * Verbose logs include the final ticker, request URL, HTTP status, payload, and computed market change %.  
 
