@@ -1,9 +1,8 @@
-<img src="https://github.com/ChandlerEx/Projects/blob/2fbad740882c20011538793ed7427ab86f700809/TheOrb/OrbThumb.jpg" alt="The Orb Thumbnail" width="200"/>
-
-▶ See a video demonstration here: 
-<img src="https://github.com/ChandlerEx/Projects/blob/e3148534473ec9621d9463dd3f875371c3a7e7ef/TheOrb/TheOrb.mp4" alt="Demo Video" width="300"/>
-
 # The Orb
+Video demonstration - click thumbnail below: <br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3VyHg8dSKyA/2.jpg)](https://www.youtube.com/watch?v=3VyHg8dSKyA)
+
+# Backgrond
 For years I've had a fasination with an old concept - ambient computing. The idea is to convey digital information in a sensory way that doesn't 
 rely on screens. I've had the idea in my head for as long as I can remember, but this pursuit provided an opportunity to bring it from brain to reality.
 
@@ -101,6 +100,7 @@ A plug-and-play desktop stock indicator that:
 <img src="https://github.com/ChandlerEx/Projects/blob/49efa33ea989afc09e3a05c3a19611a23c8cd73c/TheOrb/OrbEnc2.png" alt="Orb Enclosure 2" height="200"/>
 
 **Finished Build**  
+<img src="https://github.com/ChandlerEx/Projects/blob/2fbad740882c20011538793ed7427ab86f700809/TheOrb/OrbThumb.jpg" alt="The Orb Thumbnail" height="200"/>
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbUnassembled.jpg" alt="Orb Unassembled" height="200"/>
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbOpened.jpg" alt="Orb Opened" height="200"/>
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbBack.jpg" alt="Orb Back" height="200"/>
