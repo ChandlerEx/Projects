@@ -1,9 +1,8 @@
-<img src="https://github.com/ChandlerEx/Projects/blob/825f767845b1f51373b4fc3cadaaf89885add228/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="200"/>
-
-▶ See a video demonstration here: 
-<img src="https://github.com/ChandlerEx/Projects/blob/da490656c7174ca725e0aa463e8dc51a4410ffbf/SoilMonitor/SoilMonDemo.mp4" alt="Demo Video" width="300"/>
-
 # Soil Monitor
+Video demonstration: <br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HjDUlzzIptQ/0.jpg)](https://www.youtube.com/watch?v=HjDUlzzIptQ)
+
+# Background
 My wife got a succulent as a gift, but she was worried about overwatering it - a common way to kill a succulent! So, to help, I decided to build a 
 soil monitor and configure it specifically for succulents. 
 <br>The result is a battery-powered soil moisture monitor with a clear OLED display and ultra-low power sleep mode. 
@@ -81,6 +80,9 @@ Mapped to 0–100% for display
   - Full reboot ensures display and sensors reinitialize cleanly
 
 # Photos
+Soil Monitor in Use<br>
+<img src="https://github.com/ChandlerEx/Projects/blob/825f767845b1f51373b4fc3cadaaf89885add228/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="200"/>
+
 Top View<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" width="250"/>
 
