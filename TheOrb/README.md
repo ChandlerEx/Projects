@@ -25,46 +25,29 @@ A plug-and-play desktop stock indicator that:
 - Power: Micro-USB 5V
 - Enclosure: 80mm glass dome with custom-printed base
 - Extras:
-        - 330 Ω resistor (in series from D4 → DIN)
-        - 1000 µF capacitor (across VCC and GND at LED ring)
+  - 330 Ω resistor (in series from D4 → DIN)
+  - 1000 µF capacitor (across VCC and GND at LED ring)
 
 # Architecture Overview
 - Language: Arduino-style C++
 - Startup Behavior:
-
-        Solid yellow boot color
-
-        If double reset is detected, Wi-Fi settings reset and captive portal starts
-
-        Captive portal allows user to enter:
-
-            Wi-Fi SSID / password
-
-            Stock ticker (defaults to SPY)
-
-        Ticker is stored in EEPROM
-
-    Data Fetch:
-
-        HTTPS GET to Finnhub API every 30 seconds
-
-        Calculates % change from previous close
-
-    LED Logic:
-
-        Green: positive change
-
-        Red: negative change
-
-        Pulse speed scales with volatility:
-
-            ≥ 3%: very fast pulse
-
-            ≥ 2%: fast pulse
-
-            ≥ 1%: slow pulse
-
-            < 1%: solid color
+  - Solid yellow boot color
+  - If double reset is detected, Wi-Fi settings reset and captive portal starts
+  - Captive portal allows user to enter:
+      - Wi-Fi SSID / password
+      - Stock ticker (defaults to SPY)
+      - Ticker is stored in EEPROM
+  - Data Fetch:
+      - HTTPS GET to Finnhub API every 30 seconds
+      - Calculates % change from previous close
+  - LED Logic:
+      - Green: positive change
+      - Red: negative change
+      - Pulse speed scales with volatility:
+        - ≥ 3%: very fast pulse
+        - ≥ 2%: fast pulse
+        - ≥ 1%: slow pulse
+        - < 1%: solid color
 
     Error Handling:
 
