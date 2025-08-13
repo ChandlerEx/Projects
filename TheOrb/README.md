@@ -64,3 +64,10 @@
 * **Serial diagnostics**
   * Verbose logs include the final ticker, request URL, HTTP status, payload, and computed market change %.   &#x20;
 
+
+# Potential Future Features
+
+* Provide a broader set of inital indicators to track on WiFi setup screen
+* Make brightness easily adjustable (on initial config, or with a light sensor to 'read the room'
+* Add small screen to front of base showing indicator and current % change, possibly allowing multiple indicator tracking
+* Provide multiple glass orb designs (clear glass with design laser etched inside? Sqishy orbs? Logo-covered orbs?)
