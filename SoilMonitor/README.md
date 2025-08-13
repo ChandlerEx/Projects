@@ -27,7 +27,7 @@ A compact, effective monitor for soil moisture coded in Arduino-style C++ with:
 
 # Wiring
 
-| Component                  | XIAO Pin          |
+| Component                  | XIAO nRF52840 Pin          |
 |---------------------------|-------------------|
 | OLED (SSD1306, I2C)       | SDA → GPIO 4<br>SCL → GPIO 5 |
 | Moisture Sensor           | A1 (Pin 1)        |
