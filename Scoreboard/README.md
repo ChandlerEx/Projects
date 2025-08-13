@@ -1,5 +1,5 @@
 # Scoreboard
-Video demonstration:<br>
+Video demonstration - click thumbnail below:<br>
 [![Scoreboard Demo Video](https://img.youtube.com/vi/gKBhKu_5G0A/0.jpg)](https://www.youtube.com/watch?v=gKBhKu_5G0A)
 
 ## What it is
