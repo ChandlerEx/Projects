@@ -1,5 +1,5 @@
 # Soil Monitor
-Video demonstration: <br>
+Video demonstration - click thumbnail below: <br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HjDUlzzIptQ/0.jpg)](https://www.youtube.com/watch?v=HjDUlzzIptQ)
 
 # Background
