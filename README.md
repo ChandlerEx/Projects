@@ -8,7 +8,7 @@ They’re documented here both as a personal portfolio and as a resource for any
 |---------|-------------|---------|
 | [**Soil Moisture Monitor**](./SoilMonitor) | Battery-powered monitor for a succulent, with OLED display, capacitive moisture sensor, and ultra-low power sleep mode. Designed for accurate plant care without overwatering. | <img src="https://github.com/ChandlerEx/Projects/blob/bd44a9a6053a92f3da4370e4cfcf0bc38572fa22/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor" width="150"/> |
 | [**Scoreboard**](./Scoreboard) | Desk-friendly MLB scoreboard showing Yankees game status, first pitch alerts, and live updates. Uses an ESP32 with touchscreen display in a custom enclosure. | <img src="https://github.com/ChandlerEx/Projects/blob/bd44a9a6053a92f3da4370e4cfcf0bc38572fa22/Scoreboard/ScoreboardScore.jpg" alt="Scoreboard" width="150"/> |
-| [**TheOrb**](./TheOrb) | Ambient LED orb that changes color based on live stock price performance. Powered by an ESP32 with custom PCB and 3D-printed shell. | <img src="StockPriceOrb/images/OrbThumb.jpg" alt="StockPriceOrb" width="150"/> |
+| [**TheOrb**](./TheOrb) | Ambient LED orb that changes color based on live stock price performance. Powered by an ESP32 with custom PCB and 3D-printed shell. | <img src="https://github.com/ChandlerEx/Projects/blob/4fce6b1c45c0433fd5aaa784d1d3e17cac22d64d/TheOrb/OrbThumb.jpg" alt="StockPriceOrb" width="150"/> |
 
 
 ## Technologies & Skills Featured
