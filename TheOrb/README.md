@@ -50,7 +50,6 @@ Wiring is extremely simple, as all components are connected to the custom PCB de
 - Go through configuration steps, keeping an eye on Serial monitor for any unexpected issues
 
 ## Lessons Learned
-- When faced with several solutions, don't let analysis paralysis get the best of you
 - Using 'ESP_DoubleResetDetector' made captive portal access easy without access to the physical board.
 - Pulse animations look far smoother when brightness modulation is sinusoidal.
 - A resistor + capacitor drastically improves LED stability and reduces flicker.
