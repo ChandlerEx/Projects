@@ -1,4 +1,4 @@
-# The Orb - [Download the One Sheet (PDF)](Orb_One_Sheet.pdf?raw=true)
+# The Orb - [Download the One Sheet (PDF)](docs/Orb_One_Sheet.pdf?raw=true)
 
 Video demonstration - click thumbnail below: <br>
 [![Orb Demonstration](https://img.youtube.com/vi/3VyHg8dSKyA/0.jpg)](https://www.youtube.com/watch?v=3VyHg8dSKyA)
