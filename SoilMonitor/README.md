@@ -35,6 +35,8 @@ A compact, effective monitor for soil moisture coded in Arduino-style C++ with:
 | Wake Button               | GPIO 2 → GND      |
 | Battery                   | BAT+ pad + GND pin|
 
+<img src="https://github.com/ChandlerEx/Projects/blob/9a11e649d50762af672b37ba1d7330335580c16b/SoilMonitor/SoilMonBreadboard.jpg" alt="Soil Monitor Breadboard" width="300"/>
+
 <img src="https://github.com/ChandlerEx/Projects/blob/891a760c9f960f25a479301b3d8ec1b8d20b8800/SoilMonitor/SoilMonWiring.png" alt="Wiring Diagram" width="250"/>
 
 # Calibration
