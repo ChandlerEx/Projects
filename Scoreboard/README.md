@@ -1,5 +1,5 @@
 # Scoreboard
-**[One-Sheet PDF – Quick Build Reference](./docs/Scoreboard_One_Sheet.pdf)**  
+**[One-Sheet PDF – Quick Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/Scoreboard/docs/Scoreboard_One_Sheet.pdf)**  
 *(Overview, dimensions, wiring, build steps, and lessons learned)*
 
 Video demonstration - click thumbnail below:<br>
