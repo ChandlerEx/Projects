@@ -4,7 +4,7 @@
 
 Video demonstration - click thumbnail below: <br>
 <a href="https://www.youtube.com/watch?v=3VyHg8dSKyA">
-  <img src="./visual-media/OrbThumb.jpg" alt="Orb Video Demo" width="150">
+  <img src="./visual-media/OrbDemoVidThumb.png" alt="Orb Video Demo" width="350">
 </a>
 
 ## Overview
