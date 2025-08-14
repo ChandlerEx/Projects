@@ -33,7 +33,7 @@ or even crypto is up or down at the moment with color and conveys how drastic th
 | Rubber feet | For enclosure stability | Qty: 4 |
 
 ## Wiring
-Wiring is extremely simple, as all components are connected to the custom PCB designed for this project:<br>
+Wiring is extremely simple, as all components are connected to the custom PCB I specifically designed for this project:<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbPCB.png" alt="Orb PCB" width="150"/>
 
 ## Build Steps
