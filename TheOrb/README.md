@@ -11,12 +11,12 @@ and by how much. Measures 100 × 80 × 80 mm (110 g). Features a custom PCB (Eas
 
 ## Photos
 **Enclosure Design** - 3D enclosure modeled in Fusion 360<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbEnc.png" alt="Orb Enclosure" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/49efa33ea989afc09e3a05c3a19611a23c8cd73c/TheOrb/OrbEnc2.png" alt="Orb Enclosure 2" height="200"/>
+<img src="./visual-media/OrbEnc.png" alt="Orb Enclosure" height="200"/>
+<img src="./visual-media/OrbEnc2.png" alt="Orb Enclosure 2" height="200"/>
 
 **Finished Build**  
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbOpened.jpg" alt="Orb Opened" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbThumb.jpg" alt="Orb Complete" height="200"/>
+<img src="./visual-media/OrbOpened.jpg" alt="Orb Opened" height="200"/>
+<img src="./visual-media/OrbThumb.jpg" alt="Orb Complete" height="200"/>
 
 ## Bill of Materials
 | Item | Description | Notes |
@@ -36,7 +36,7 @@ and by how much. Measures 100 × 80 × 80 mm (110 g). Features a custom PCB (Eas
 
 ## Wiring
 Wiring is extremely simple, as all components are connected to the custom PCB I specifically designed for this project:<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbPCB.png" alt="Orb PCB" width="150"/>
+<img src="./visual-media/OrbPCB.png" alt="Orb PCB" width="150"/>
 
 ## Build Steps
 - Solder all components to the PCB
@@ -132,9 +132,9 @@ A plug-and-play desktop stock indicator that:
 | Wi-Fi connection fail  | Repeating 10× blue blink cycle              |
 
 ## Files
-- `InfoOrb.ino` — Full Arduino sketch
-- `TheOrb.f3d` — Fusion 360 enclosure design
-- `TheOrb.stl` — STL file for base/enclosure
+- ./firmware/InfoOrb.ino — Full Arduino sketch
+- ./cad/TheOrb.f3d — Fusion 360 enclosure design
+- ./cad/TheOrb.stl — STL file for base/enclosure
 - [Finnhub API](https://finnhub.io) — Live stock data source
 
 # Potential Future Features
@@ -146,17 +146,17 @@ A plug-and-play desktop stock indicator that:
 
 ## Photos
 **Early Prototype**  
-<img src="https://github.com/ChandlerEx/Projects/blob/e93dbe359cb56c9a379545c0b2fdb04d66260b8e/TheOrb/OrbPrototype.jpg" alt="Orb Prototype" width="200"/>
+<img src="./visual-media/OrbPrototype.jpg" alt="Orb Prototype" width="200"/>
 
 **Enclosure Design**  
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbEnc.png" alt="Orb Enclosure" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/49efa33ea989afc09e3a05c3a19611a23c8cd73c/TheOrb/OrbEnc2.png" alt="Orb Enclosure 2" height="200"/>
+<img src="./visual-media/OrbEnc.png" alt="Orb Enclosure" height="200"/>
+<img src="./visual-media/OrbEnc2.png" alt="Orb Enclosure 2" height="200"/>
 
 **Finished Build**  
-<img src="https://github.com/ChandlerEx/Projects/blob/2fbad740882c20011538793ed7427ab86f700809/TheOrb/OrbThumb.jpg" alt="The Orb Thumbnail" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbUnassembled.jpg" alt="Orb Unassembled" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbOpened.jpg" alt="Orb Opened" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbBack.jpg" alt="Orb Back" height="200"/>
+<img src="./visual-media/OrbThumb.jpg" alt="The Orb Thumbnail" height="200"/>
+<img src="./visual-media/OrbUnassembled.jpg" alt="Orb Unassembled" height="200"/>
+<img src="./visual-media/OrbOpened.jpg" alt="Orb Opened" height="200"/>
+<img src="./visual-media/OrbBack.jpg" alt="Orb Back" height="200"/>
 
 ## Quick start (new user workflow)
 * **Power up and join setup Wi-Fi**
