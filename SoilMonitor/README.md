@@ -3,7 +3,7 @@ Video demonstration - click thumbnail below: <br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HjDUlzzIptQ/0.jpg)](https://www.youtube.com/watch?v=HjDUlzzIptQ)
 
 ## What It Is
-A small soil moisture monitor with an integrated LiPo battery and rechargability built in. It has an OLED display showing battery charge, moisture percentage, and whether to water or not, making it simple for any succulent owner to stradd
+A small soil moisture monitor with an integrated LiPo battery and rechargeability built in. It has an OLED display showing battery charge, moisture percentage, and whether to water or not, it is compact and dead-simple for plant lovers who just want to know when to water.
 
 ## Photos
 Soil Monitor in Use<br>
