@@ -2,8 +2,10 @@
 **[One-Sheet PDF – Quick Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/Scoreboard/docs/Scoreboard_One_Sheet.pdf)**  
 *(Overview, dimensions, wiring, build steps, and lessons learned)*
 
-Video demonstration - click thumbnail below:<br>
-[![Scoreboard Demo Video](https://img.youtube.com/vi/gKBhKu_5G0A/0.jpg)](https://www.youtube.com/watch?v=gKBhKu_5G0A)
+Video demonstration - click thumbnail below: <br>
+<a href="https://www.youtube.com/watch?v=gKBhKu_5G0A">
+  <img src="./visual-media/ScoreboardDemoVidThumb.png" alt="Orb Video Demo" width="350">
+</a>
 
 ## Overview
 The Scoreboard is a desk-friendly digital clock with a hidden touch interface that displays live Yankees game data on demand. Tapping the screen queries the MLB 
