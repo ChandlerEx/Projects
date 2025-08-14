@@ -61,7 +61,9 @@ Wiring is extremely simple, as all components are connected to the custom PCB I 
 MIT license
 
 ---
-
+<details>
+<summary>Click here for more background and technical details about The Orb</summary>
+  
 # More Details
 
 ## Background
@@ -200,4 +202,4 @@ to 192.168.4.1, enter your Wi-Fi credentials and populatethe Stock Ticker (defau
   * Any HTTP/connection/parse failure calls 'flashBlueError()' which blinks blue twice. 
 * **Serial diagnostics**
   * Verbose logs include the final ticker, request URL, HTTP status, payload, and computed market change %.  
-
+</details>
