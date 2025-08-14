@@ -2,9 +2,9 @@
 Video demonstration - click thumbnail below:<br>
 [![Scoreboard Demo Video](https://img.youtube.com/vi/gKBhKu_5G0A/0.jpg)](https://www.youtube.com/watch?v=gKBhKu_5G0A)
 
-## What it is
+## Overview
 The 'Scoreboard' looks and works like a typical digital clock with a covert function: touching the screen queries the MLB StatsAPI and displays live Yankees game info 
-on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
+on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence. Uses a 3D-printed enclosure modeled from scratch in Fusion 360.
 
 ## Photos
 Early Prototype (Used off-the-shelf enclosure)<br>
