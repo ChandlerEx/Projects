@@ -34,7 +34,7 @@ setup via a captive portal and stores data for offline viewing. Measures 98 × 6
 
 ## Build Steps
 - Upload 'ScoreboardPrototype.ino' to the ESP32 embedded in the CYD module
-- Configure WiFi access via the Captive portal
+- Configure Wi-Fi access via the Captive portal
 - Print the bezel and base from the 'Scoreboard.stl' file in this project
 - Route the power and ground leads from a USB-A cable through the port on back, tie a knot into the USB cable for strain relief, then wire into the JST port
 - Screw the CYD onto the base the snap fit the bezel onto the front
@@ -73,7 +73,7 @@ A wall-outlet powered ESP32 scoreboard that:
 - Displays box scores (R / H / E)
 - Displays current time with toggleable clock
 - Is reversible, so it can angle the display at 30 or 60 degress
-- Supports touchscreen interaction to switch views, toggle settings, and reset the stored wifi info
+- Supports touchscreen interaction to switch views, toggle settings, and reset the stored Wi-Fi info
 
 ## Hardware
 - ESP32-3248S035R (TFT + resistive touch)
