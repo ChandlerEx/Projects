@@ -11,14 +11,14 @@ to water. Measures 119 × 37 × 34 mm (52 g). Features a 3D-printed enclosure (F
 
 ## Photos
 **Soil Monitor in Use**<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/825f767845b1f51373b4fc3cadaaf89885add228/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="200"/>
+<img src="./visual-media/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="200"/>
 
 **Top / Side Views**<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" height="200"/><br>
+<img src="./visual-media/SoilMonTopView.jpg" alt="Top View" height="200"/>
+<img src="./visual-media/SoilMonSideView.jpg" alt="Side View" height="200"/><br>
 
 **Enclosure Design** - 3D enclosure modeled in Fusion 360<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/bcb127a4829ba9cdfdf5ffaa3a58e7541c53ba84/SoilMonitor/SoilMonEnc.png" alt="Enclosure Design" height="250"/>
+<img src="./visual-media/SoilMonEnc.png" alt="Enclosure Design" height="250"/>
 
 ## Bill of Materials
 | Item | Description | Notes |
@@ -43,8 +43,8 @@ to water. Measures 119 × 37 × 34 mm (52 g). Features a 3D-printed enclosure (F
 | Wake Button               | GPIO 2 → GND      |
 | Battery                   | BAT+ pad + GND pin|
 
-<img src="https://github.com/ChandlerEx/Projects/blob/9a11e649d50762af672b37ba1d7330335580c16b/SoilMonitor/SoilMonBreadboard.jpg" alt="Soil Monitor Breadboard" width="300"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/891a760c9f960f25a479301b3d8ec1b8d20b8800/SoilMonitor/SoilMonWiring.png" alt="Wiring Diagram" width="250"/>
+<img src="./visual-media/SoilMonBreadboard.jpg" alt="Soil Monitor Breadboard" width="300"/>
+<img src="./visual-media/SoilMonWiring.png" alt="Wiring Diagram" width="250"/>
 
 ## Build Steps
 - Solder the display, sensor, voltage divider, wake button, and battery to the chip
@@ -99,13 +99,10 @@ A compact, effective monitor for soil moisture coded in Arduino-style C++ with:
 - A tiny SoC to run the show (the Seeed Studio XIAO nRF52840 which is ~18mm X 21mm)
 - Recharge capability (built into the nRF52840)
 
-
-
 ## Calibration
 Moisture readings are calibrated between:
 - *Dry:* `2665`
 - *Wet:* `1155`
-  
 Mapped to 0–100% for display
 
 ## Enclosure
@@ -113,7 +110,7 @@ Mapped to 0–100% for display
 - Custom 3D-printed shell with two bottom pieces that screw together and friction fit into the top piece
 - Ground and power rails for easier soldering
 - Holes with precise tolerances for display and wake button
-<img src="https://github.com/ChandlerEx/Projects/blob/edbfac9c0c20d4b20371947c66a9b49363ebae98/SoilMonitor/SoilMonEnc.png" alt="Enclosure" width="250"/>
+<img src="./visual-media/SoilMonEnc.png" alt="Enclosure" width="250"/>
 
 ## Hardware
 - XIAO nRF52840 SoC
@@ -141,10 +138,9 @@ Mapped to 0–100% for display
 
 
 ## Files
-- SoilMon.ino -- Full Arduino sketch
-- SoilMon.f3d -- Fusion 360 source
-- SoilMon.stl -- STL file for printing
-- SoilMonDemo.mp4 -- Video of demo
+- ./firmware/SoilMon.ino -- Full Arduino sketch
+- ./cad/SoilMon.f3d -- Fusion 360 source
+- ./cad/SoilMon.stl -- STL file for printing
 
 ## Potential Future Features
 - Captive portal for viewing moisture status over Wi-Fi
