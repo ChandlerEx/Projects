@@ -3,8 +3,7 @@ Video demonstration - click thumbnail below: <br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HjDUlzzIptQ/0.jpg)](https://www.youtube.com/watch?v=HjDUlzzIptQ)
 
 ## Overview
-A small soil moisture monitor with an integrated LiPo battery and rechargeability built in. It has an OLED display showing battery charge, moisture percentage, and whether to 
-water or not, it is compact and dead-simple for plant lovers who just want to know when to water. Uses a 3D-printed enclosure modeled from scratch in Fusion 360.
+A small soil moisture monitor with an integrated LiPo battery and rechargeability built in. It has an OLED display showing battery charge, moisture percentage, and whether to water or not, it is compact and dead-simple for plant lovers. Measures 119mm x 37mm x 34mm, weighing only 52g. Uses a 3D-printed enclosure modeled from scratch in Fusion 360.
 
 ## Photos
 Soil Monitor in Use<br>
