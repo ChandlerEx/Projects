@@ -6,19 +6,18 @@ Video demonstration - click thumbnail below:<br>
 [![Scoreboard Demo Video](https://img.youtube.com/vi/gKBhKu_5G0A/0.jpg)](https://www.youtube.com/watch?v=gKBhKu_5G0A)
 
 ## Overview
-The 'Scoreboard' looks and works like a typical digital clock with a covert function: touching the screen queries the MLB StatsAPI and displays live MLB game info on an 
-ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence. Measures 98mm x 60mm x 57mm, weighing only 124g. Uses a 3D-printed enclosure modeled from 
-scratch in Fusion 360.
+The Scoreboard is a desk-friendly digital clock with a hidden touch interface that displays live MLB Baseball game data on demand. Tapping the screen queries 
+the MLB StatsAPI to show scores, inning status, and base runners, while long-pressing opens settings. Measures 98 × 60 × 57 mm (124 g). Built around an ESP32 
+CYD touchscreen with a custom 3D-printed enclosure modeled in Fusion 360.
 
 ## Photos
-Early Prototype (Used off-the-shelf enclosure)<br>
-<img src="https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a" alt="Early Prototype" height="250"/>
+**Early Prototype** (Used off-the-shelf enclosure)<br>
+<img src="https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a" alt="Early Prototype" height="225"/>
 
-Finished Build<br>
-<img src="https://github.com/user-attachments/assets/ccfb72b6-7670-484e-8638-d6ba8d4bcea1" alt="Finished Build" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="200"/>  
-<img src="https://github.com/ChandlerEx/Projects/blob/a76d304cf0fb3020f3d13f72d8a12cddec5b9524/Scoreboard/ScoreboardInUse2.jpg" alt="ScoreboardInUse2" height="200"/>
+**Finished Build**<br>
+<img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" height="225"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/901382017dd94e5ac3727795fe7eb9a30eb157ab/Scoreboard/ScoreboardSettings.jpg" alt="ScoreboardSettings" height="225"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="225"/>  
 
 ## Bill of Materials
 | Item | Description | Notes |
@@ -56,7 +55,8 @@ Finished Build<br>
 MIT license
 
 ---
-
+<details>
+<summary>Click here for more background and technical details about Scoreboard</summary>
 
 # More Details
 
@@ -103,3 +103,4 @@ A wall-outlet powered ESP32 scoreboard that:
 - Allow users to follow any MLB team they want (configuring that in the CP when getting initially set up
 - Add other sports as well (NFL, NBA, MLS, NHL, F1)
 - Add a sneaky, unobtrusive icon to the clock screen to indicate a game is currently being played
+</details>
