@@ -3,7 +3,9 @@
 *(Overview, dimensions, wiring, build steps, and lessons learned)*
 
 Video demonstration - click thumbnail below: <br>
-[![SoilMon Demo](https://img.youtube.com/vi/HjDUlzzIptQ/0.jpg)](https://www.youtube.com/watch?v=HjDUlzzIptQ)
+<a href="https://www.youtube.com/watch?v=HjDUlzzIptQ">
+  <img src="./visual-media/SoilMonDemoVidThumb.png" alt="Orb Video Demo" width="300">
+</a>
 
 ## Overview
 The Soil Monitor is a battery-powered, OLED-based moisture sensor that shows real-time soil moisture and battery level, and tells plant lovers when 
