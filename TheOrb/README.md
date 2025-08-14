@@ -3,7 +3,9 @@
 *(Overview, dimensions, wiring, build steps, and lessons learned)*
 
 Video demonstration - click thumbnail below: <br>
-[![Orb Demonstration](https://img.youtube.com/vi/3VyHg8dSKyA/0.jpg)](https://www.youtube.com/watch?v=3VyHg8dSKyA)
+<a href="https://www.youtube.com/watch?v=3VyHg8dSKyA">
+  <img src="./visual-media/OrbThumb.jpg" alt="Orb Video Demo" width="150">
+</a>
 
 ## Overview
 The Orb is a frosted-glass desktop indicator that uses color and pulsing light to show whether a selected stock, index, or crypto is up or down, 
