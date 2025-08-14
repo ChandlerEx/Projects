@@ -100,7 +100,7 @@ A wall-outlet powered ESP32 scoreboard that:
 
 ## Potential Future Features
 - Allow users to adjust brightness of the various displays in the settings and only with long or short screen taps
-- Allow users to follow any MLB team they want (configuring that in the CP when getting initially set up
+- Allow users to follow any MLB team they want (configuring that in the CP when getting initially set up)
 - Add other sports as well (NFL, NBA, MLS, NHL, F1)
 - Add a sneaky, unobtrusive icon to the clock screen to indicate a game is currently being played
 </details>
