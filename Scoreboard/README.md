@@ -65,7 +65,7 @@ I live in a New York Yankees supporting household, but often we'll be busy and u
 
 The initial idea was a module that plugged into the wall, stayed at the wall outlet, and made a sound if there was a homerun or the Yankees won. That evolved as I realized how intrusive that could be, especially in a home office. Then, I thought, maybe it'd be nice to have a small, unobtrusive device that looks totally normal on an office desk, while still letting us know the latest on the Yankees.<br>
 
-This device looks and works like a normal clock, but touching the screen shows live info from the Yankees game. The result: a live MLB scoreboard that displays Yankees game info on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
+This device looks and works like a normal clock, but touching the screen on the prototype shows live info from the Yankees game. The result: a live MLB scoreboard that displays Yankees game info on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
 
 ## Project Goal
 A wall-outlet powered ESP32 scoreboard that:
