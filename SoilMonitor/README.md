@@ -79,7 +79,7 @@ MIT License
 My wife got a succulent as a gift, but she was worried about overwatering it - a common way to kill a succulent! So, to help, I decided to build a 
 soil monitor and configure it specifically for succulents. 
 <br>The result is a battery-powered soil moisture monitor with a clear OLED display and ultra-low power sleep mode. 
-Designed to be compact and dead-simple for plant lovers who just want to know when to water.
+Designed to be compact and dead simple for plant lovers who just want to know when to water.
 <br>This project demonstrates:
 - sensor calibration & analog input
 - power management
