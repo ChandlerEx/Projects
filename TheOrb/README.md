@@ -23,7 +23,7 @@ and by how much. Measures 100 × 80 × 80 mm (110 g). Features a custom PCB (Eas
 |------|-------------|-------|
 | ESP8266 D1 Mini (LOLIN/WEMOS-compatible) | Controls LED animations and Wi-Fi connection for live stock updates | USB powered |
 | WS2812B LED Ring(s) | RGB LED rings providing visual output | Mounted inside dome |
-| 7mm Black Prewired Mini Momentary Push Button,SPST | For resetting device if new stock or WiFi is needed | Mounted on back of enclosure by USB port |
+| 7mm Black Prewired Mini Momentary Push Button,SPST | For resetting device if new stock or Wi-Fi is needed | Mounted on back of enclosure by USB port |
 | 330Ω resistor | Protects the LED ring from voltage spikes and ringing on the data line | Simple to add, and a bit of insurance |
 | 1000µF capacitor | Smooths voltage to LED | Another bit of protection and insurance for the LED ring |
 | Custom PCB | Consolidates LED, ESP8266 D1 Mini, capacitor and resistor connections | Designed in EasyEDA |
@@ -110,7 +110,7 @@ A plug-and-play desktop stock indicator that:
   - Green: positive change
   - Red: negative change
   - Pulse speed scales with volatility: ≥ 3%: very fast pulse; ≥ 2%: fast pulse; ≥ 1%: slow pulse
-  - Solid Yellow = Awaiting wifi info, typically on first start-up
+  - Solid Yellow = Awaiting Wi-Fi info, typically on first start-up
   - Two blue flashes indicate a network/parse failure. 
 
 ## Error Handling
@@ -173,7 +173,7 @@ to 192.168.4.1, enter your Wi-Fi credentials and populate the Stock Ticker (defa
 * **What the lights mean**
   * **Green** = positive change
   * **Red** = negative change
-  * **Solid Yellow** = Awaiting wifi info, typically on first start-up
+  * **Solid Yellow** = Awaiting Wi-Fi info, typically on first start-up
   * *NOTE* Pulse speed increases with magnitude (≥1%, ≥2%, ≥3% tiers)
   * **Two blue flashes** indicate a network/parse failure.
 
