@@ -6,9 +6,9 @@ Video demonstration - click thumbnail below:<br>
 [![Scoreboard Demo Video](https://img.youtube.com/vi/gKBhKu_5G0A/0.jpg)](https://www.youtube.com/watch?v=gKBhKu_5G0A)
 
 ## Overview
-The Scoreboard is a desk-friendly digital clock with a hidden touch interface that displays live MLB Baseball game data on demand. Tapping the screen queries 
-the MLB StatsAPI to show scores, inning status, and base runners, while long-pressing opens settings. Measures 98 × 60 × 57 mm (124 g). Built around an ESP32 
-CYD touchscreen with a custom 3D-printed enclosure modeled in Fusion 360.
+The Scoreboard is a desk-friendly digital clock with a hidden touch interface that displays live Yankees game data on demand. Tapping the screen queries the MLB 
+StatsAPI to show scores, inning status, and base runners; long-pressing opens settings for screen flipping, clock toggle, and Wi-Fi reset. Supports quick Wi-Fi 
+setup via a captive portal and stores data for offline viewing. Measures 98 × 60 × 57 mm (124 g). Built around an ESP32 CYD touchscreen with a custom 3D-printed enclosure modeled in Fusion 360.
 
 ## Photos
 **Early Prototype** (Used off-the-shelf enclosure)<br>
