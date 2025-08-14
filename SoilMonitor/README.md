@@ -1,17 +1,26 @@
 # Soil Monitor
+
+**[One-Sheet PDF – Quick Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/SoilMonitor/docs/SoilMon_One_Sheet.pdf)** 
+*(Overview, dimensions, wiring, build steps, and lessons learned)*
+
 Video demonstration - click thumbnail below: <br>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HjDUlzzIptQ/0.jpg)](https://www.youtube.com/watch?v=HjDUlzzIptQ)
+[![SoilMon Demo](https://img.youtube.com/vi/HjDUlzzIptQ/0.jpg)](https://www.youtube.com/watch?v=HjDUlzzIptQ)
 
 ## Overview
-A small soil moisture monitor with an integrated LiPo battery and rechargeability built in. It has an OLED display showing battery charge, moisture percentage, and whether to water or not, it is compact and dead-simple for plant lovers. Measures 119mm x 37mm x 34mm, weighing only 52g. Uses a 3D-printed enclosure modeled from scratch in Fusion 360.
+The Soil Monitor is a battery-powered, OLED-based moisture sensor that shows real-time soil moisture and battery level, and tells plant lovers when 
+to water. Measures 119 × 37 × 34 mm (52 g). Features a 3D-printed enclosure (Fusion 360) and calibration-tuned firmware optimized for succulents.
 
 ## Photos
 Soil Monitor in Use<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/825f767845b1f51373b4fc3cadaaf89885add228/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="200"/>
 
 Top / Side Views<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" height="150"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" height="150"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" height="200"/>
+
+Enclosure Design<br>
+<img src="https://github.com/ChandlerEx/Projects/blob/aa160fb4e5521bbcb74199a05557546825330a14/TheOrb/OrbEnc2.png" alt="Enclosure Design2" height="250"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/aa160fb4e5521bbcb74199a05557546825330a14/TheOrb/OrbEnc.png" alt="Enclosure Design" height="250"/>
 
 ## Bill of Materials
 | Item | Description | Notes |
@@ -63,7 +72,7 @@ Top / Side Views<br>
 ## License
 MIT License
 
-
+<details> <summary>Click here for more background and technical details about Soil Monitor</summary>
 
 # More Details
 
@@ -145,3 +154,4 @@ Mapped to 0–100% for display
 - User-set calibration menu
 - Deeper sleep modes for even longer battery life
 - Rubber gasket for sensor protection
+</details>
