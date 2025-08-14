@@ -20,6 +20,14 @@ They’re documented here both as a personal portfolio and as a resource for any
 - Battery management and low-power firmware design
 - I²C device integration (OLED displays, sensors)
 
+## Repository Structure
+Each project follows the same organized folder structure:<br><br>
+ProjectName/cad/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Fusion 360 source files (.f3d) and STL exports  
+ProjectName/docs/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# One-sheet PDF, dimension drawings, reference documents  
+ProjectName/firmware/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Arduino source code  
+ProjectName/media/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Photos, renders, and videos (static assets for README)  
+ProjectName/README.md&nbsp;&nbsp;# Project-specific documentation  
+
 ## About Me
 I’m Chandler, an IT professional turned maker, focused on creating embedded electronics that work as well as they look. My builds 
 combine purposeful hardware integration, thoughtful UX, and custom enclosures modeled from scratch in Fusion 360. I approach each 
