@@ -72,7 +72,7 @@ A wall-outlet powered ESP32 scoreboard that:
 - Shows live Yankees game status
 - Displays box scores (R / H / E)
 - Displays current time with toggleable clock
-- Is reversible, so it can angle the display at 30 or 60 degress
+- Is reversible, so it can angle the display at 30 or 60 degrees
 - Supports touchscreen interaction to switch views, toggle settings, and reset the stored Wi-Fi info
 
 ## Hardware
