@@ -11,16 +11,13 @@ StatsAPI to show scores, inning status, and base runners; long-pressing opens se
 setup via a captive portal and stores data for offline viewing. Measures 98 × 60 × 57 mm (124 g). Built around an ESP32 CYD touchscreen with a custom 3D-printed enclosure modeled in Fusion 360.
 
 ## Photos
-**Early Prototype** (Used off-the-shelf enclosure)<br>
-<img src="https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a" alt="Early Prototype" height="200"/>
-
 **Finished Build**<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/901382017dd94e5ac3727795fe7eb9a30eb157ab/Scoreboard/ScoreboardSettings.jpg" alt="ScoreboardSettings" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="200"/>  
+<img src="./visual-media/ScoreboardScore.jpg" alt="Showing Score" height="200"/>
+<img src="./visual-media/ScoreboardSettings.jpg" alt="ScoreboardSettings" height="200"/>
+<img src="./visual-media/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="200"/>  
 
 **Enclosure Design**<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/f431f446cbc0d26ab5680d121ebbc427395d03b7/Scoreboard/ScoreboardEncExploded.png" alt="Showing Score" height="200"/>
+<img src="./visual-media/ScoreboardEncExploded.png" alt="Showing Score" height="200"/>
 
 ## Bill of Materials
 | Item | Description | Notes |
@@ -94,9 +91,9 @@ A wall-outlet powered ESP32 scoreboard that:
 
 ## Files
 - MLB StatsAPI: https://statsapi.mlb.com
-- Full ESP32 sketch: ScoreboardPrototype.ino
-- Full Fusion Archive: Scoreboard.f3d
-- STL files of enclosure and bezel: Scoreboard.stl
+- Full ESP32 sketch: ./firmware/ScoreboardPrototype.ino
+- Full Fusion Archive: ./cad/Scoreboard.f3d
+- STL files of enclosure and bezel: ./cad/Scoreboard.stl
 
 ## Potential Future Features
 - Allow users to adjust brightness of the various displays in the settings and only with long or short screen taps
