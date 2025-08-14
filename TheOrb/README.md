@@ -4,8 +4,9 @@ Video demonstration - click thumbnail below: <br>
 [![Orb Demonstration](https://img.youtube.com/vi/3VyHg8dSKyA/0.jpg)](https://www.youtube.com/watch?v=3VyHg8dSKyA)
 
 ## Overview
-The Orb is an innocuous looking frosted sphere that conveys whether a certain financial index, commodity, stock 
-or even crypto is up or down at the moment with color and conveys how drastic the change is by pulsing the light. Custom PCB designed in EasyEDA for this project.
+The Orb is an innocuous looking frosted sphere that conveys whether a certain financial index, commodity, stock or even crypto is up or down 
+at the moment with color and conveys how drastic the change is by pulsing the light. Measures 100mm x 80mm x 80mm, weighing only 110g. Uses 
+a 3D-printed enclosure modeled from scratch in Fusion 360 and a custom PCB designed in EasyEDA.
 
 ## Photos
 **Enclosure Design** - 3D enclosure modeled in Fusion 360<br>
