@@ -1,6 +1,5 @@
 # Soil Monitor
-
-**[One-Sheet PDF – Quick Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/SoilMonitor/docs/SoilMon_One_Sheet.pdf)** 
+**[One-Sheet PDF – Quick Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/SoilMonitor/docs/SoilMon_One_Sheet.pdf)**<br>
 *(Overview, dimensions, wiring, build steps, and lessons learned)*
 
 Video demonstration - click thumbnail below: <br>
