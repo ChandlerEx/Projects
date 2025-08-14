@@ -12,12 +12,15 @@ setup via a captive portal and stores data for offline viewing. Measures 98 × 6
 
 ## Photos
 **Early Prototype** (Used off-the-shelf enclosure)<br>
-<img src="https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a" alt="Early Prototype" height="225"/>
+<img src="https://github.com/user-attachments/assets/f6440fe7-e67e-47fb-aa2f-fecacd956c5a" alt="Early Prototype" height="200"/>
 
 **Finished Build**<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" height="225"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/901382017dd94e5ac3727795fe7eb9a30eb157ab/Scoreboard/ScoreboardSettings.jpg" alt="ScoreboardSettings" height="225"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="225"/>  
+<img src="https://github.com/ChandlerEx/Projects/blob/e6dc3a84d38a4de915836535537666dae7083257/Scoreboard/ScoreboardScore.jpg" alt="Showing Score" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/901382017dd94e5ac3727795fe7eb9a30eb157ab/Scoreboard/ScoreboardSettings.jpg" alt="ScoreboardSettings" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/da597a4e2234c74e041e07c38a4a65b5bd89d893/Scoreboard/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="200"/>  
+
+**Enclosure Design**<br>
+<img src="https://github.com/ChandlerEx/Projects/blob/f431f446cbc0d26ab5680d121ebbc427395d03b7/Scoreboard/ScoreboardEncExploded.png" alt="Showing Score" height="200"/>
 
 ## Bill of Materials
 | Item | Description | Notes |
@@ -27,10 +30,7 @@ setup via a captive portal and stores data for offline viewing. Measures 98 × 6
 | Screws (M3 x 8mm) | Machine screws for mounting board to enclosure | Qty: 4 |
 | USB Cable (Power leads to USB-A) | Power cable wired into JST port on CYD | Routed through rear port |
 | Filament (PLA) | Material for enclosure | Color as desired - Used Yankees Blue here |
-| Adhesive Rubber Feet | Optional for enclosure stability | Qty: 4 |
-
-## Enclosure Design
-<img src="https://github.com/ChandlerEx/Projects/blob/f431f446cbc0d26ab5680d121ebbc427395d03b7/Scoreboard/ScoreboardEncExploded.png" alt="Showing Score" width="450"/>
+| Adhesive Rubber Feet | Non-slip feet for enclosure stability | Qty: 4 (optional)|
 
 ## Build Steps
 - Upload 'ScoreboardPrototype.ino' to the ESP32 embedded in the CYD module
@@ -72,8 +72,8 @@ A wall-outlet powered ESP32 scoreboard that:
 - Shows live Yankees game status
 - Displays box scores (R / H / E)
 - Displays current time with toggleable clock
-- Is reversable, so it can angle the display at 30 or 60 degress
-- Supports touchscreen interaction to switch views, toggle settings, and rest the stored wifi info
+- Is reversible, so it can angle the display at 30 or 60 degress
+- Supports touchscreen interaction to switch views, toggle settings, and reset the stored wifi info
 
 ## Hardware
 - ESP32-3248S035R (TFT + resistive touch)
