@@ -161,7 +161,7 @@ A plug-and-play desktop stock indicator that:
 ## Quick start (new user workflow)
 * **Power up and join setup Wi-Fi**
   - On boot the firmware starts WiFiManager and opens an AP named 'Orb_Setup' for provisioning. Connect to that network, direct your browser
-to 192.168.4.1, enter your Wi-Fi credentials and populatethe Stock Ticker (default: SPY) field.
+to 192.168.4.1, enter your Wi-Fi credentials and populate the Stock Ticker (default: SPY) field.
 * **Reconfiguring later**
   - Performing a double-reset triggers configuration mode: settings are cleared, the 'Orb_Setup' portal opens again, and the entered ticker is saved.
 * **Ticker storage & fallback**
