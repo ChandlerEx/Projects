@@ -23,7 +23,7 @@ and by how much. Measures 100 × 80 × 80 mm (110 g). Features a custom PCB (Eas
 |------|-------------|-------|
 | ESP8266 D1 Mini (LOLIN/WEMOS-compatible) | Controls LED animations and Wi-Fi connection for live stock updates | USB powered |
 | WS2812B LED Ring(s) | RGB LED rings providing visual output | Mounted inside dome |
-| 7mm Black Prewired Mini Momentary Push Button,SPST | For restting device if new stock or WiFi is needed | Mounted on back of enclosure by USB port |
+| 7mm Black Prewired Mini Momentary Push Button,SPST | For resetting device if new stock or WiFi is needed | Mounted on back of enclosure by USB port |
 | 330Ω resistor | Protects the LED ring from voltage spikes and ringing on the data line | Simple to add, and a bit of insurance |
 | 1000µF capacitor | Smooths voltage to LED | Another bit of protection and insurance for the LED ring |
 | Custom PCB | Consolidates LED, ESP8266 D1 Mini, capacitor and resistor connections | Designed in EasyEDA |
