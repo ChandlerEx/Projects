@@ -19,8 +19,7 @@ Top / Side Views<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" height="200"/>
 
 Enclosure Design<br>
-<img src="https://github.com/ChandlerEx/Projects/blob/aa160fb4e5521bbcb74199a05557546825330a14/TheOrb/OrbEnc2.png" alt="Enclosure Design2" height="250"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/aa160fb4e5521bbcb74199a05557546825330a14/TheOrb/OrbEnc.png" alt="Enclosure Design" height="250"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/bcb127a4829ba9cdfdf5ffaa3a58e7541c53ba84/SoilMonitor/SoilMonEnc.png" alt="Enclosure Design" height="250"/>
 
 ## Bill of Materials
 | Item | Description | Notes |
