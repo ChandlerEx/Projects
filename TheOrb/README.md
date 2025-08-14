@@ -1,12 +1,13 @@
-# The Orb - [Download the One Sheet (PDF)](https://raw.githubusercontent.com/ChandlerEx/Projects/main/TheOrb/docs/Orb_One_Sheet.pdf)
+# The Orb
+**[One-Sheet PDF – Quick Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/TheOrb/docs/Orb_One_Sheet.pdf)**  
+*(Overview, dimensions, wiring, build steps, and lessons learned)*
 
 Video demonstration - click thumbnail below: <br>
 [![Orb Demonstration](https://img.youtube.com/vi/3VyHg8dSKyA/0.jpg)](https://www.youtube.com/watch?v=3VyHg8dSKyA)
 
 ## Overview
-The Orb is an innocuous looking frosted sphere that conveys whether a certain financial index, commodity, stock or even crypto is up or down 
-at the moment with color and conveys how drastic the change is by pulsing the light. Measures 100mm x 80mm x 80mm, weighing only 110g. Uses 
-a 3D-printed enclosure modeled from scratch in Fusion 360 and a custom PCB designed in EasyEDA.
+The Orb is a frosted-glass desktop indicator that uses color and pulsing light to show whether a selected stock, index, or crypto is up or down, 
+and by how much. Measures 100 × 80 × 80 mm (110 g). Features a custom PCB (EasyEDA) and a fully parametric 3D-printed enclosure (Fusion 360).
 
 ## Photos
 **Enclosure Design** - 3D enclosure modeled in Fusion 360<br>
@@ -41,14 +42,14 @@ Wiring is extremely simple, as all components are connected to the custom PCB I 
 - Solder all components to the PCB
 - Screw PCB into bottom of enclosure base, ensuring USB port faces USB hole in enclosure
 - Mount the switch into the cradle on top of enclosure base
-- Screw LED ring into base ofthreaded piece, and push through the top hole
+- Screw LED ring into base of threaded piece, and push through the top hole
 - Screw glass globe onto threaded piece sticking out from top
 - Secure top and bottom pieces of base together with screws
 
 ## Code
 - Open Arduino IDE, then connect ESP8266 to computer
 - Select 'LOLIN(WEMOS) D1 R2 & mini' for board
-- Upload the code found in the 'InfoOrb.ino' file in the p[roject documents here
+- Upload the code found in the 'InfoOrb.ino' file in the project documents here
 - Go through configuration steps, keeping an eye on Serial monitor for any unexpected issues
 
 ## Lessons Learned
@@ -128,15 +129,6 @@ A plug-and-play desktop stock indicator that:
 | Wi-Fi/data error       | Two quick blue flashes                     |
 | Wi-Fi connection fail  | Repeating 10× blue blink cycle              |
 
-## Lessons Learned
-
-- When faced with several solutions, don't let analysis paralysis get the best of you
-- Using `ESP_DoubleResetDetector` makes captive portal access easy without a physical button.
-- `WiFiClientSecure` with `setInsecure()` is essential for quick HTTPS on ESP8266.
-- EEPROM trimming and validation prevents storing corrupted tickers.
-- Pulse animations look far smoother when brightness modulation is sinusoidal.
-- A resistor + capacitor drastically improves LED stability and reduces flicker.
-
 ## Files
 - `InfoOrb.ino` — Full Arduino sketch
 - `TheOrb.f3d` — Fusion 360 enclosure design
@@ -163,7 +155,6 @@ A plug-and-play desktop stock indicator that:
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbUnassembled.jpg" alt="Orb Unassembled" height="200"/>
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbOpened.jpg" alt="Orb Opened" height="200"/>
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbBack.jpg" alt="Orb Back" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbThumb.jpg" alt="Orb Complete" height="200"/>
 
 ## Quick start (new user workflow)
 * **Power up and join setup Wi-Fi**
