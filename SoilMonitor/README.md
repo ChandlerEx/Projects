@@ -11,14 +11,14 @@ The Soil Monitor is a battery-powered, OLED-based moisture sensor that shows rea
 to water. Measures 119 × 37 × 34 mm (52 g). Features a 3D-printed enclosure (Fusion 360) and calibration-tuned firmware optimized for succulents.
 
 ## Photos
-Soil Monitor in Use<br>
+**Soil Monitor in Use**<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/825f767845b1f51373b4fc3cadaaf89885add228/SoilMonitor/SoilMonInUse.jpg" alt="Soil Monitor At Work" width="200"/>
 
-Top / Side Views<br>
+**Top / Side Views**<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonTopView.jpg" alt="Top View" height="200"/>
-<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" height="200"/>
+<img src="https://github.com/ChandlerEx/Projects/blob/501849a08d16480545f08d7e6b22d4a53f451889/SoilMonitor/SoilMonSideView.jpg" alt="Side View" height="200"/><br>
 
-Enclosure Design<br>
+**Enclosure Design** - 3D enclosure modeled in Fusion 360<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/bcb127a4829ba9cdfdf5ffaa3a58e7541c53ba84/SoilMonitor/SoilMonEnc.png" alt="Enclosure Design" height="250"/>
 
 ## Bill of Materials
