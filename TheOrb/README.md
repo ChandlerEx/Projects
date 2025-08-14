@@ -8,7 +8,7 @@ The Orb is an innocuous looking frosted sphere that conveys whether a certain fi
 or even crypto is up or down at the moment with color and conveys how drastic the change is by pulsing the light.
 
 ## Photos
-**Enclosure Design**  
+**Enclosure Design** - 3D enclosure modeled in Fusion 360<br>
 <img src="https://github.com/ChandlerEx/Projects/blob/49e3df42ca273e68b9ba8bfd7576e66e19e732c4/TheOrb/OrbEnc.png" alt="Orb Enclosure" height="200"/>
 <img src="https://github.com/ChandlerEx/Projects/blob/49efa33ea989afc09e3a05c3a19611a23c8cd73c/TheOrb/OrbEnc2.png" alt="Orb Enclosure 2" height="200"/>
 
