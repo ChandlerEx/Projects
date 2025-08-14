@@ -32,7 +32,7 @@ and by how much. Measures 100 × 80 × 80 mm (110 g). Features a custom PCB (Eas
 | USB Cable (Micro-USB to USB-A) | Power and programming cable | Routed through rear or base port |
 | Filament (PLA/PETG) | PLA for base, Transparent PETG for threaded connector | Color and transparency as desired |
 | Screws (M2x10mm) | Secures top of enclosure and base to eachother | Qty: 4 |
-| Rubber feet | For enclosure stability | Qty: 4 |
+| Adhesive Rubber Feet | For enclosure stability | Qty: 4 |
 
 ## Wiring
 Wiring is extremely simple, as all components are connected to the custom PCB I specifically designed for this project:<br>
