@@ -16,7 +16,7 @@ They’re documented here both as a personal portfolio and as a resource for any
 - PCB design and fabrication
 - Hardware integration (microcontrollers, sensors, and displays)
 - Microcontroller programming (ESP32, ESP8266 D1 Mini, and nRF52840)
-- Arduino-style C++ development for embedded systems
+- Arduino-style C++ development for embedded systems (with AI assistance)
 - Battery management and low-power firmware design
 - I²C device integration (OLED displays, sensors)
 
