@@ -29,6 +29,4 @@ ProjectName/media/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 ProjectName/README.md&nbsp;&nbsp;# Project-specific documentation  
 
 ## About Me
-I’m Chandler, an IT professional turned maker, focused on creating embedded electronics that work as well as they look. My builds 
-combine purposeful hardware integration, thoughtful UX, and custom enclosures modeled from scratch in Fusion 360. I approach each 
-project as both an engineering challenge and a design exercise, aiming for devices that are reliable, visually refined, and ready for real-world use.
+I’m Chandler, a prototype technician and maker who builds electro-mechanical devices from the ground up. My work blends embedded electronics, soldering and wiring, 3D printing, and Fusion 360 design to create hardware that’s reliable, reproducible, and cleanly executed. I like turning rough ideas into well-built systems: custom jigs, tight enclosures, clear documentation, and hardware that survives real use. I focus on practical engineering, thoughtful UX, and build workflows that scale.
