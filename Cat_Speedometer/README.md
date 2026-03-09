@@ -13,7 +13,7 @@ This project was designed and built as a personal exploration of lightweight emb
 <img src="./Cat_Speedometer/visual-media/Speedo.jpg" alt="Cat Speedometer Finished Build" width="150"/>
 Wheel Speedometer Installed  
 
-<img src="./Cat_Speedometer/visual-media/SpeedoBaseOpen.jpg" alt="Inside Base Enclosure" width="150"/>
+<img src="/visual-media/SpeedoBaseOpen.jpg" alt="Inside Base Enclosure" width="150"/>
 Wheel Speedometer Electronics  
  
 <img src="./Cat_Speedometer/visual-media/SpeedoDispOpen.jpg" alt="Inside Display Unit" width="150"/>
