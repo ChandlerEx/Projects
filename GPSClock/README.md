@@ -1,8 +1,5 @@
 # GPSClock
 
-
-## Overview
-
 The GPSClock is a low-power, GPS-disciplined wall clock built around an ATmega328P microcontroller.  
 It combines a DS3231 real-time clock with periodic synchronization from a GT-U7 GPS module to maintain accurate time even during long periods without satellite visibility.
 
