@@ -1,0 +1,474 @@
+#include <Wire.h>
+#include "RTClib.h"
+
+#include <TinyGPS++.h>
+#include <SoftwareSerial.h>
+
+#define DISABLE_DIAGNOSTIC_OUTPUT
+#define DBG 0
+
+#include <GxEPD2_BW.h>
+#include <Adafruit_GFX.h>
+
+#include <Fonts/FreeSansBold18pt7b.h>
+
+// --------------------
+// ATmega328P pin mapping is the same as Arduino Uno:
+// D10=PB2, D11=PB3 (MOSI), D13=PB5 (SCK), A4=PC4 (SDA), A5=PC5 (SCL)
+
+// --------------------
+// E-PAPER (Waveshare 2.9" 296x128 V2) header labels:
+// VCC GND DIN CLK CS DC RST BUSY
+bool drawingTime = false;
+
+// Debug/state: current scheduler start second (so GPS line can display it)
+uint8_t g_drawStartSecond = 54;   // locked baseline for A/B test
+uint16_t g_drawEmaMs = 0;         // still displayed, but no longer drives scheduling
+
+static const uint8_t EPD_CS   = 10;
+static const uint8_t EPD_DC   = 9;
+static const uint8_t EPD_RST  = 8;
+static const uint8_t EPD_BUSY = 7;
+
+// SRAM-safe: small paged buffer
+GxEPD2_BW<GxEPD2_290_BS, 16> display(
+  GxEPD2_290_BS(EPD_CS, EPD_DC, EPD_RST, EPD_BUSY)
+);
+
+// --------------------
+// RTC (DS3231)
+RTC_DS3231 rtc;
+
+// --------------------
+// GPS (TXD -> D4)
+static const uint8_t GPS_RX_PIN = 4; // receives from GPS TX
+static const uint8_t GPS_TX_PIN = 5; // unused, but required
+SoftwareSerial gpsSerial(GPS_RX_PIN, GPS_TX_PIN);
+TinyGPSPlus gps;
+
+// --------------------
+// Sync policy
+static const uint32_t GPS_RESYNC_PERIOD_S = 6UL * 60UL * 60UL; // 6 hours
+static const uint32_t GPS_MAX_WAIT_MS     = 15UL * 1000UL;     // 15 seconds
+
+// --------------------
+// Time helpers (US Pacific DST, evaluated in UTC)
+
+uint8_t dow(uint16_t y, uint8_t m, uint8_t d) {
+  // returns 0=Sunday..6=Saturday
+  if (m < 3) { m += 12; y -= 1; }
+  uint16_t K = y % 100;
+  uint16_t J = y / 100;
+  int h = (d + (13*(m+1))/5 + K + (K/4) + (J/4) + (5*J)) % 7;
+  int z = (h + 6) % 7; // 0=Sunday
+  return (uint8_t)z;
+}
+
+uint8_t nthSunday(uint16_t y, uint8_t m, uint8_t n) {
+  uint8_t firstDow = dow(y,m,1);          // 0=Sun
+  uint8_t firstSunday = (firstDow==0) ? 1 : (8 - firstDow);
+  return (uint8_t)(firstSunday + 7*(n-1));
+}
+
+uint8_t firstSunday(uint16_t y, uint8_t m) {
+  return nthSunday(y,m,1);
+}
+
+// DST start: 2nd Sunday in March at 02:00 local (PST UTC-8) => 10:00 UTC
+// DST end:   1st Sunday in Nov   at 02:00 local (PDT UTC-7) => 09:00 UTC
+bool isDST_US_Pacific_UTC(const DateTime& utc) {
+  uint16_t y = utc.year();
+
+  uint8_t startDay = nthSunday(y, 3, 2);
+  DateTime dstStartUTC(y, 3, startDay, 10, 0, 0);
+
+  uint8_t endDay = firstSunday(y, 11);
+  DateTime dstEndUTC(y, 11, endDay, 9, 0, 0);
+
+  return (utc >= dstStartUTC) && (utc < dstEndUTC);
+}
+
+DateTime utcToPacific(const DateTime& utc) {
+  int offsetHours = isDST_US_Pacific_UTC(utc) ? -7 : -8;
+  return utc + TimeSpan(0, offsetHours, 0, 0);
+}
+
+void pumpGps(uint16_t budget_ms = 25) {
+  uint32_t start = millis();
+  while ((millis() - start) < budget_ms) {
+    while (gpsSerial.available()) gps.encode(gpsSerial.read());
+    if (!gpsSerial.available()) break;
+  }
+}
+
+bool tryGetGpsUtc(DateTime &outUtc) {
+  // Assumes pumpGps() is being called regularly elsewhere.
+  if (!(gps.time.isValid() && gps.date.isValid())) return false;
+
+  outUtc = DateTime(
+    gps.date.year(),
+    gps.date.month(),
+    gps.date.day(),
+    gps.time.hour(),
+    gps.time.minute(),
+    gps.time.second()
+  );
+  return true;
+}
+
+// Fresh GPS time: require that TinyGPS++ updated time/date recently.
+// This prevents "valid-but-stale" GPS data from stepping the RTC.
+bool tryGetFreshGpsUtc(DateTime &outUtc) {
+  if (!(gps.time.isValid() && gps.date.isValid())) return false;
+  if (gps.time.age() > 1500) return false;
+  if (gps.date.age() > 1500) return false;
+
+  outUtc = DateTime(
+    gps.date.year(),
+    gps.date.month(),
+    gps.date.day(),
+    gps.time.hour(),
+    gps.time.minute(),
+    gps.time.second()
+  );
+  return true;
+}
+
+// Read a single bit from an Adafruit_GFX font bitmap (1bpp, MSB-first)
+static inline bool fontBit(const uint8_t* bitmap, uint32_t bitIndex) {
+  uint8_t b = pgm_read_byte(bitmap + (bitIndex >> 3));
+  return b & (0x80 >> (bitIndex & 7));
+}
+
+static void measureTextScaled(const GFXfont* font, const char* text, uint8_t scale,
+                              int16_t* outMinX, int16_t* outMinY,
+                              uint16_t* outW, uint16_t* outH) {
+  int16_t minX =  32767, minY =  32767;
+  int16_t maxX = -32768, maxY = -32768;
+
+  int16_t cursorX = 0;
+
+  while (*text) {
+    char c = *text++;
+    if (c < font->first || c > font->last) continue;
+
+    const GFXglyph* g = font->glyph + (c - font->first);
+
+    int16_t gx = cursorX + (int8_t)pgm_read_byte(&g->xOffset);
+    int16_t gy = (int8_t)pgm_read_byte(&g->yOffset);
+    uint8_t gw = pgm_read_byte(&g->width);
+    uint8_t gh = pgm_read_byte(&g->height);
+
+    if (gw && gh) {
+      if (gx < minX) minX = gx;
+      if (gy < minY) minY = gy;
+      if (gx + gw > maxX) maxX = gx + gw;
+      if (gy + gh > maxY) maxY = gy + gh;
+    }
+
+    cursorX += (uint8_t)pgm_read_byte(&g->xAdvance);
+  }
+
+  if (minX == 32767) {
+    *outMinX = 0; *outMinY = 0; *outW = 0; *outH = 0;
+    return;
+  }
+
+  *outMinX = minX * scale;
+  *outMinY = minY * scale;
+  *outW = (uint16_t)((maxX - minX) * scale);
+  *outH = (uint16_t)((maxY - minY) * scale);
+}
+
+static void drawTextScaled(const GFXfont* font, const char* text, uint8_t scale,
+                           int16_t baselineX, int16_t baselineY) {
+  const uint8_t* bitmap = font->bitmap;
+  int16_t cursorX = 0;
+
+  while (*text) {
+    char c = *text++;
+    if (c < font->first || c > font->last) continue;
+
+    const GFXglyph* g = font->glyph + (c - font->first);
+
+    uint16_t bo = pgm_read_word(&g->bitmapOffset);
+    uint8_t gw  = pgm_read_byte(&g->width);
+    uint8_t gh  = pgm_read_byte(&g->height);
+    int8_t  xo  = (int8_t)pgm_read_byte(&g->xOffset);
+    int8_t  yo  = (int8_t)pgm_read_byte(&g->yOffset);
+
+    if (gw && gh) {
+      for (uint8_t yy = 0; yy < gh; yy++) {
+        int16_t runStart = -1;
+
+        for (uint8_t xx = 0; xx < gw; xx++) {
+          uint32_t bitIndex = (uint32_t)bo * 8u + (uint32_t)yy * (uint32_t)gw + (uint32_t)xx;
+          bool on = fontBit(bitmap, bitIndex);
+
+          if (on) {
+            if (runStart < 0) runStart = xx;
+          } else {
+            if (runStart >= 0) {
+              uint8_t runLen = (uint8_t)(xx - runStart);
+              int16_t px = baselineX + (cursorX + xo + runStart) * scale;
+              int16_t py = baselineY + (yo + (int16_t)yy) * scale;
+              display.fillRect(px, py, (int16_t)runLen * scale, scale, GxEPD_BLACK);
+              runStart = -1;
+            }
+          }
+        }
+
+        if (runStart >= 0) {
+          uint8_t runLen = (uint8_t)(gw - runStart);
+          int16_t px = baselineX + (cursorX + xo + runStart) * scale;
+          int16_t py = baselineY + (yo + (int16_t)yy) * scale;
+          display.fillRect(px, py, (int16_t)runLen * scale, scale, GxEPD_BLACK);
+        }
+      }
+    }
+
+    cursorX += (uint8_t)pgm_read_byte(&g->xAdvance);
+  }
+}
+
+void drawLandscapeTime(const DateTime& local, bool fullRefresh) {
+  const uint16_t gpsLineHeight = 24;
+  uint16_t timeAreaHeight = display.height() - gpsLineHeight;
+  timeAreaHeight &= ~7;
+
+  const GFXfont* font = &FreeSansBold18pt7b;
+  const uint8_t scale = 3;
+
+  char buf[6];
+
+  int h = local.hour();
+  if (h == 0) h = 12;
+  else if (h > 12) h -= 12;
+
+  uint8_t hh = (uint8_t)h;
+  uint8_t mm = (uint8_t)local.minute();
+  buf[0] = (char)('0' + (hh / 10));
+  buf[1] = (char)('0' + (hh % 10));
+  buf[2] = ':';
+  buf[3] = (char)('0' + (mm / 10));
+  buf[4] = (char)('0' + (mm % 10));
+  buf[5] = '\0';
+
+  if (fullRefresh) display.setFullWindow();
+  else display.setPartialWindow(0, 0, display.width(), timeAreaHeight);
+
+  int16_t minX, minY;
+  uint16_t tw, th;
+  measureTextScaled(font, buf, scale, &minX, &minY, &tw, &th);
+
+  int16_t xTop = (int16_t)((display.width() - (int16_t)tw) / 2);
+  int16_t yTop = (int16_t)((timeAreaHeight - (int16_t)th) / 2);
+
+  int16_t baselineX = (int16_t)(xTop - minX);
+  int16_t baselineY = (int16_t)(yTop - minY);
+
+  display.firstPage();
+  do {
+    display.fillScreen(GxEPD_WHITE);
+    drawTextScaled(font, buf, scale, baselineX, baselineY);
+  } while (display.nextPage());
+}
+
+void drawGpsLineOnly() {
+  const uint16_t gpsLineHeight = 24;
+  uint16_t timeAreaHeight = display.height() - gpsLineHeight;
+  timeAreaHeight &= ~7;
+
+  display.setPartialWindow(0, timeAreaHeight, display.width(), gpsLineHeight);
+
+  uint32_t sat = gps.satellites.isValid() ? gps.satellites.value() : 0;
+  uint32_t age = gps.time.isValid() ? gps.time.age() : 999999UL;
+
+  int32_t diffS = -1;
+  DateTime gpsUtc;
+  if (tryGetFreshGpsUtc(gpsUtc)) {
+    DateTime rtcUtc = rtc.now();
+    uint32_t g = gpsUtc.unixtime();
+    uint32_t r = rtcUtc.unixtime();
+    diffS = (g > r) ? (int32_t)(g - r) : (int32_t)(r - g);
+  }
+
+  display.firstPage();
+  do {
+    display.fillScreen(GxEPD_WHITE);
+    display.setTextColor(GxEPD_BLACK);
+    display.setFont(NULL);
+    display.setTextSize(1);
+
+    display.setCursor(2, timeAreaHeight + 16);
+
+    display.print(F("S:"));
+    if (sat < 10) display.print('0');
+    display.print((unsigned long)sat);
+
+    display.print(F(" A:"));
+    display.print((unsigned long)age);
+
+    display.print(F(" d:"));
+    if (diffS < 0) display.print(F("--"));
+    else display.print(diffS);
+
+    display.print(F(" T:"));
+    if (g_drawStartSecond < 10) display.print('0');
+    display.print(g_drawStartSecond);
+
+    display.print(F(" E:"));
+    display.print(g_drawEmaMs);
+
+  } while (display.nextPage());
+}
+
+void setup() {
+  Wire.begin();
+  if (!rtc.begin()) {
+    while (1) {}
+  }
+
+  gpsSerial.begin(9600);
+
+  display.init(115200);
+  display.setRotation(1);
+  display.setTextColor(GxEPD_BLACK);
+
+  bool rtcTimeUnknown = rtc.lostPower();
+
+  // Boot sync: require *fresh* GPS so we never set RTC from stale fields
+  DateTime gpsUtc;
+  bool got = false;
+  uint32_t t0 = millis();
+  while (millis() - t0 < 60000UL) {
+    pumpGps(50);
+    if (tryGetFreshGpsUtc(gpsUtc)) { got = true; break; }
+  }
+  if (got) {
+    rtc.adjust(gpsUtc);
+    rtcTimeUnknown = false;
+  }
+
+  DateTime utcNow = rtc.now();
+  DateTime localNow = utcToPacific(utcNow);
+
+  if (!rtcTimeUnknown) {
+    drawLandscapeTime(localNow, true);
+  }
+}
+
+void loop() {
+  static uint32_t lastGpsUiMs  = 0;
+  static uint32_t lastTimeDrawMs = 0;
+  static int8_t   lastMinuteScheduled = -1;
+
+  static uint16_t lastTimeDrawDurMs = 1200; // measured duration of drawLandscapeTime()
+
+  pumpGps(50);
+
+  // Hard-fix (rare): only trust *fresh* GPS fields, otherwise do nothing.
+  static uint32_t lastHardFixMs = 0;
+  if (millis() - lastHardFixMs > 5000UL) {
+    DateTime gpsUtc;
+    if (tryGetFreshGpsUtc(gpsUtc)) {
+      DateTime rtcUtc = rtc.now();
+
+      uint32_t g = gpsUtc.unixtime();
+      uint32_t r = rtcUtc.unixtime();
+      uint32_t diff = (g > r) ? (g - r) : (r - g);
+
+      if (diff > 120UL) {
+        rtc.adjust(gpsUtc);
+      }
+    }
+    lastHardFixMs = millis();
+  }
+
+  static bool didFirstGpsSet = false;
+  if (!didFirstGpsSet) {
+    pumpGps(200);
+    DateTime gpsUtc;
+    if (tryGetFreshGpsUtc(gpsUtc)) {
+      rtc.adjust(gpsUtc);
+      didFirstGpsSet = true;
+    }
+  }
+
+  static uint32_t lastGpsSyncMs = 0;
+  if (lastGpsSyncMs == 0) lastGpsSyncMs = millis();
+
+  if (millis() - lastGpsSyncMs >= (uint32_t)GPS_RESYNC_PERIOD_S * 1000UL) {
+    DateTime gpsUtc;
+    uint32_t t0 = millis();
+    bool gotFresh = false;
+
+    while (millis() - t0 < GPS_MAX_WAIT_MS) {
+      pumpGps(50);
+      if (tryGetFreshGpsUtc(gpsUtc)) { gotFresh = true; break; }
+    }
+
+    if (gotFresh) {
+      rtc.adjust(gpsUtc);
+    }
+
+    lastGpsSyncMs = millis();
+  }
+
+  if (!drawingTime && (millis() - lastGpsUiMs >= 10000UL)) {
+    lastGpsUiMs = millis();
+    drawGpsLineOnly();
+    pumpGps(250);
+  }
+
+  static int8_t lastSecondSeen = -1;
+
+  DateTime utcNow2 = rtc.now();
+  DateTime localNow2 = utcToPacific(utcNow2);
+
+  int8_t s = (int8_t)localNow2.second();
+  if (s != lastSecondSeen) {
+    lastSecondSeen = s;
+
+    if (lastTimeDrawMs == 0) lastTimeDrawMs = millis();
+
+    if (millis() - lastTimeDrawMs > 90000UL) {
+      drawingTime = true;
+      uint32_t t0 = millis();
+      drawLandscapeTime(localNow2, false);
+      lastTimeDrawDurMs = (uint16_t)(millis() - t0);
+      pumpGps(400);
+      drawingTime = false;
+      lastTimeDrawMs = millis();
+    }
+
+    // SCHEDULED EARLY DRAW: LOCKED (no auto-tune in this build)
+    const uint8_t WINDOW = 2;
+
+    DateTime nextLocal = localNow2 + TimeSpan(0, 0, 1, 0);
+    uint8_t targetMinute = nextLocal.minute();
+
+    int16_t sec = (int16_t)localNow2.second();
+    int16_t start = (int16_t)g_drawStartSecond;
+
+    bool inWindow = (sec >= (start - WINDOW)) && (sec <= (start + WINDOW));
+
+    if (inWindow && (int8_t)targetMinute != lastMinuteScheduled) {
+      lastMinuteScheduled = (int8_t)targetMinute;
+
+      drawingTime = true;
+
+      uint32_t t0 = millis();
+      drawLandscapeTime(nextLocal, false);
+      lastTimeDrawDurMs = (uint16_t)(millis() - t0);
+
+      pumpGps(400);
+      drawingTime = false;
+
+      lastTimeDrawMs = millis();
+
+      // Keep E visible for diagnostics, but DO NOT let it retune T.
+      g_drawEmaMs = lastTimeDrawDurMs;
+    }
+  }
+}
