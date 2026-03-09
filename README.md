@@ -5,15 +5,12 @@ They’re documented here both as a personal portfolio and as a resource for any
 
 
 
-The GPSClock is a low-power, GPS-disciplined wall clock built around an ATmega328P microcontroller.
-It combines a DS3231 real-time clock with periodic synchronization from a GT-U7 GPS module to maintain accurate time even during long periods without satellite visibility.
 
 ## Projects
 | Project | One-Sheet PDF | Description | Preview |
 |---------|-----------------------|-------------|---------|
-| [**Cat Speedometer**](./Cat_Speedometer) | [Quick Details and Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/TheOrb/docs/Orb_One_Sheet.pdf) | The Cat Wheel Speedometer is a computer-vision-based telemetry system that measures the running speed of a cat exercise wheel in real time. | <img src="./Cat_Speedometer/visual-media/Speedo.jpg" alt="Cat Speedometer Finished Build" width="150"/> |
-| [**GPS Clock**](./GPSClock) | The GPSClock is a low-power, GPS-disciplined wall clock built around an ATmega328P microcontroller.
-It combines a DS3231 real-time clock with periodic synchronization from a GT-U7 GPS module to maintain accurate time even during long periods without satellite visibility. | <img src="./GPSClock/visual-media/GPSClock.jpg" alt="Cat Speedometer Finished Build" width="150"/> |
+| [**Cat Speedometer**](./Cat_Speedometer) | * | The Cat Wheel Speedometer is a computer-vision-based telemetry system that measures the running speed of a cat exercise wheel in real time. | <img src="./Cat_Speedometer/visual-media/Speedo.jpg" alt="Cat Speedometer Finished Build" width="150"/> |
+| [**GPS Clock**](./GPSClock) | * | The GPSClock is a low-power, GPS-disciplined wall clock built around an ATmega328P microcontroller. It combines a DS3231 real-time clock with periodic synchronization from a GT-U7 GPS module to maintain accurate time even during long periods without satellite visibility. | <img src="./GPSClock/visual-media/GPSClock.jpg" alt="Cat Speedometer Finished Build" width="150"/> |
 | [**The Orb**](./TheOrb) | [Quick Details and Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/TheOrb/docs/Orb_One_Sheet.pdf) | Ambient LED orb that visualizes live stock performance through color and pulsing light. Powered by an ESP8266 D1 Mini with custom PCB, in a 3D-printed enclosure topped with a frosted glass globe. | <img src="./TheOrb/visual-media/OrbThumb.jpg" alt="The Orb Finished Build" width="150"/> |
 | [**Soil Moisture Monitor**](./SoilMonitor) | [Quick Details and Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/SoilMonitor/docs/SoilMon_One_Sheet.pdf) | Battery-powered OLED moisture monitor that tells plant lovers when to water. Built with a XIAO nRF52840 and capacitive sensor, in a precision-fit 3D-printed enclosure with calibration-tuned firmware for succulents. | <img src="./SoilMonitor/visual-media/SoilMonInUse.jpg" alt="Soil Moisture Monitor in Use" width="150"/> |
 | [**Scoreboard**](./Scoreboard) | [Quick Details and Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/Scoreboard/docs/Scoreboard_One_Sheet.pdf) | Desk-friendly digital clock with a hidden touchscreen that displays live MLB game data on demand. Uses an ESP32 CYD with custom 3D-printed enclosure and captive portal Wi-Fi setup. | <img src="./Scoreboard/visual-media/ScoreboardScore.jpg" alt="Scoreboard Showing Live MLB Score" width="150"/> |
