@@ -1,6 +1,4 @@
 # Cat Wheel Speedometer  
-One-Sheet Project Overview  
-(OpenCV motion detection, Raspberry Pi vision pipeline, and OLED telemetry display)
 
 ## Overview
 The Cat Wheel Speedometer is a computer-vision-based telemetry system that measures the running speed of a cat exercise wheel in real time. A Raspberry Pi camera monitors white markers placed on the wheel and uses OpenCV to detect each pass through a calibrated detection gate. From the time between passes, the system calculates RPM and converts it to wheel speed (mph), displaying the results on a small OLED screen mounted next to the wheel.
