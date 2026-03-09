@@ -17,21 +17,21 @@ The system uses scheduled early redraws to compensate for e-paper refresh latenc
 
 ## Photos
 
-Finished GPS Clock
-<img src="./visual-media/GPSClock.jpg" alt="Recent Prototype for GPS Clock" width="150"/>
+Finished GPS Clock<br>
+<img src="./visual-media/GPSClock.jpg" alt="Recent Prototype for GPS Clock" width="250"/>
 
-GPSClock Board Without Modules
-(Note openings for GPS and RTC modules to be installed) <br>
-<img src="./visual-media/GPSClockOpenPerfTop.jpg" alt="Top of Perfboard without RTC or GPS units installed" width="150"/>
+GPSClock Board Without Modules<br>
+(Note openings to drop in GPS and RTC modules) <br>
+<img src="./visual-media/GPSClockOpenPerfTop.jpg" alt="Top of Perfboard without RTC or GPS units installed" width="250"/>
 
-GPSClock Board With modules
-<img src="./visual-media/GPSClockOpenAssembled.jpg" alt="Top of Perfboard with RTC and GPS units installed" width="150"/>
+GPSClock Board With modules<br>
+<img src="./visual-media/GPSClockOpenAssembled.jpg" alt="Top of Perfboard with RTC and GPS units installed" width="250"/>
 
-GPSClock Lid
-<img src="./visual-media/GPSClockLidOpen.jpg" alt="Back of lid showing ePaper display installed" width="150"/>
+GPSClock Lid<br>
+<img src="./visual-media/GPSClockLidOpen.jpg" alt="Back of lid showing ePaper display installed" width="250"/>
 
-GPSClock Enclosure Design
-<img src="./visual-media/GPSClockEnc.pn" alt="Enclosure design file in Fusion360" width="150"/>
+GPSClock Enclosure Design<br>
+<img src="./visual-media/GPSClockEnc.png" alt="Enclosure design file in Fusion360" width="250"/>
 
 ---
 
