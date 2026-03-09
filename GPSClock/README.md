@@ -3,7 +3,7 @@
 The GPSClock is a low-power, GPS-disciplined wall clock built around an ATmega328P microcontroller.  
 It combines a DS3231 real-time clock with periodic synchronization from a GT-U7 GPS module to maintain accurate time even during long periods without satellite visibility.
 
-Time is displayed on a 2.9" Waveshare e-paper display using a custom rendering approach that scales a bitmap font algorithmically, allowing large, high-contrast text while staying within the ATmega328P's tight flash and SRAM limits.
+Time is displayed on a 2.9" Waveshare e-paper display using a custom rendering approach that scales a bitmap font algorithmically, allowing large, high-contrast text while staying within the ATmega328P's tight flash and SRAM limits. This project was completed ahead of starting my role at Google in March 2026.
 
 The display shows:
 
