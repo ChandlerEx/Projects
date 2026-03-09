@@ -10,9 +10,17 @@ The system tracks daily, weekly, and all-time speed records and runs autonomousl
 This project was designed and built as a personal exploration of lightweight embedded computer vision and real-time telemetry systems, and was completed before starting my role at Google on March 2026.
 
 ## Photos
-- Wheel Speedometer Installed  
-- Wheel Speedometer Electronics  
-- Wheel Speedometer OLED Display  
+<img src="./Cat_Speedometer/visual-media/Speedo.jpg" alt="Cat Speedometer Finished Build" width="150"/>
+Wheel Speedometer Installed  
+
+<img src="./Cat_Speedometer/visual-media/SpeedoBaseOpen.jpg" alt="Inside Base Enclosure" width="150"/>
+Wheel Speedometer Electronics  
+ 
+<img src="./Cat_Speedometer/visual-media/SpeedoDispOpen.jpg" alt="Inside Display Unit" width="150"/>
+Wheel Speedometer OLED Display  
+
+<img src="./Cat_Speedometer/visual-media/CatSpeedoEnc.png" alt="Enclosure Design" width="150"/>
+Wheel Speedometer Enclosure Design  
 
 ## Bill of Materials
 
@@ -40,7 +48,6 @@ The software also includes filtering logic to prevent double-counts and to smoot
 ## Software
 
 Primary runtime script:
-
 `speedo2.py`
 
 ### Core technologies
