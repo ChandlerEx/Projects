@@ -21,7 +21,7 @@ Finished GPS Clock<br>
 <img src="./visual-media/GPSClock.jpg" alt="Recent Prototype for GPS Clock" width="250"/>
 
 GPSClock Board Without Modules<br>
-(Note openings to drop in GPS and RTC modules) <br>
+(Note spots to drop in GPS and RTC modules) <br>
 <img src="./visual-media/GPSClockOpenPerfTop.jpg" alt="Top of Perfboard without RTC or GPS units installed" width="250"/>
 
 GPSClock Board With modules<br>
