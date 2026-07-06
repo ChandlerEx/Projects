@@ -15,8 +15,10 @@ They’re documented here both as a personal portfolio and as a resource for any
 | [**Scoreboard**](./Scoreboard) | [Quick Details and Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/Scoreboard/docs/Scoreboard_One_Sheet.pdf) | Desk-friendly digital clock with a hidden touchscreen that displays live MLB game data on demand. Uses an ESP32 CYD with custom 3D-printed enclosure and captive portal Wi-Fi setup. | <img src="./Scoreboard/visual-media/ScoreboardScore.jpg" alt="Scoreboard Showing Live MLB Score" width="150"/> |
 
 ## Technologies & Skills Featured
-- 3D modeling in Fusion 360 (threaded, snap-fit, and friction-fit joins)
-- 3D printing in PLA and PETG (including translucent parts)
+- Built new interface for Google Gemini so it could quickly generate solid, accurate parts
+- Worked with GrabCAD software to slice and print PolyJet parts for Stratasys J850, J750, and J55 printers
+- 3D modeling in Fusion 360; basic use of Rhino (threaded, snap-fit, and friction-fit joins)
+- 3D printing in PLA, PETG, and PolyJet (including translucent parts)
 - PCB design and fabrication
 - Hardware integration (microcontrollers, sensors, and displays)
 - Microcontroller programming (ESP32, ESP8266 D1 Mini, and nRF52840)
@@ -25,7 +27,7 @@ They’re documented here both as a personal portfolio and as a resource for any
 - I²C device integration (OLED displays, sensors)
 
 ## Repository Structure
-Each project follows the same organized folder structure:<br><br>
+Most projects follows the same organized folder structure:<br><br>
 ProjectName/cad/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Fusion 360 source files (.f3d) and STL exports  
 ProjectName/docs/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# One-sheet PDF, dimension drawings, reference documents  
 ProjectName/firmware/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Arduino source code  
