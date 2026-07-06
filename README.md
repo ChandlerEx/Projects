@@ -3,18 +3,9 @@
 Welcome! This is a collection of my hands-on electronics and product design builds — each project blends embedded programming, hardware integration, and 3D-printed enclosures.
 They’re documented here both as a personal portfolio and as a resource for anyone interested in building similar devices.
 
-The Electrum coin was a 3D printing exercise to familiarize myself with the capabilities of the Stratasys J850 Polyjet 3D printing system.
-
-Among the practices used here were designing and saving the idea from Fusion 360, uploading it to GrabCAD for slicing and settings, then post processing the result with an eye towards clarity.|
-
-Tactics used included printing directly on the bed, making the print glossy, implementing geometry has had an encased inner item that extended slightly beyond the top and bottom surface. The logo is a direct reference to Etherium.
-
-
-
 ## Projects
 | Project | One-Sheet PDF | Description | Preview |
 |---------|-----------------------|-------------|---------|
-
 | [**Electrum Coin**](./Electrum) | * | The Electrum coin was a 3D printing exercise to familiarize myself with the capabilities of the Stratasys J850 Polyjet 3D printing system. | <img src="./Electrum/visual-media/ElectrumPic1.jpg" alt="Electrum Coin Result" width="150"/> |
 | [**Ring Box**](./Cat_Speedometer) | * | ring box text. | <img src="./Cat_Speedometer/visual-media/Speedo.jpg" alt="Cat Speedometer Finished Build" width="150"/> |
 | [**Cat Speedometer**](./Cat_Speedometer) | * | The Cat Wheel Speedometer is a computer-vision-based telemetry system that measures the running speed of a cat exercise wheel in real time. | <img src="./Cat_Speedometer/visual-media/Speedo.jpg" alt="Cat Speedometer Finished Build" width="150"/> |
