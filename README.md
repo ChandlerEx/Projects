@@ -1,7 +1,8 @@
 ## Electronics & Maker Projects
 
-Welcome! This is a collection of my hands-on electronics and product design builds — each project blends embedded programming, hardware integration, and 3D-printed enclosures.
-They’re documented here both as a personal portfolio and as a resource for anyone interested in building similar devices.
+Welcome! This portfolio showcases hands-on electronics, embedded systems, and product development projects. Each build combines hardware integration, embedded firmware, CAD design, and custom 3D-printed parts to create practical, functional devices.
+
+Every project includes photos, design notes, firmware, and documentation so others can understand—not just see—the finished result.
 
 ## Projects
 | Project | One-Sheet PDF | Description | Preview |
@@ -15,16 +16,16 @@ They’re documented here both as a personal portfolio and as a resource for any
 | [**Scoreboard**](./Scoreboard) | [Quick Details and Build Reference](https://raw.githubusercontent.com/ChandlerEx/Projects/main/Scoreboard/docs/Scoreboard_One_Sheet.pdf) | Desk-friendly digital clock with a hidden touchscreen that displays live MLB game data on demand. Uses an ESP32 CYD with custom 3D-printed enclosure and captive portal Wi-Fi setup. | <img src="./Scoreboard/visual-media/ScoreboardScore.jpg" alt="Scoreboard Showing Live MLB Score" width="150"/> |
 
 ## Technologies & Skills Featured
-- Built new interface for Google Gemini so it could quickly generate solid, accurate parts
-- Worked with GrabCAD software to slice and print PolyJet parts for Stratasys J850, J750, and J55 printers
-- 3D modeling in Fusion 360; basic use of Rhino (threaded, snap-fit, and friction-fit joins)
-- 3D printing in PLA, PETG, and PolyJet (including translucent parts)
-- PCB design and fabrication
-- Hardware integration (microcontrollers, sensors, and displays)
-- Microcontroller programming (ESP32, ESP8266 D1 Mini, and nRF52840)
-- Arduino-style C++ development for embedded systems (with AI assistance)
-- Battery management and low-power firmware design
-- I²C device integration (OLED displays, sensors)
+- Developed a structured prompting workflow for Google Gemini to generate more accurate, buildable CAD models
+- Operated Stratasys J850, J750, and J55 PolyJet printers using GrabCAD Print
+- CAD design in Fusion 360 with working knowledge of Rhino (threads, snap-fits, friction fits)
+- 3D printing in PLA, PETG, TPU, and PolyJet materials
+- PCB design and assembly
+- Hardware integration (microcontrollers, sensors, displays, switches, power systems)
+- Embedded firmware development (ESP32, ESP8266, XIAO nRF52840)
+- Arduino/C++ development for embedded systems
+- Low-power firmware and battery-powered devices
+- I²C and SPI peripheral integration
 
 ## Repository Structure
 Most projects follows the same organized folder structure:<br><br>
@@ -35,4 +36,14 @@ ProjectName/media/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 ProjectName/README.md&nbsp;&nbsp;# Project-specific documentation  
 
 ## About Me
-I’m Chandler, a prototype technician and maker who builds electro-mechanical devices from the ground up. My work blends embedded electronics, soldering and wiring, 3D printing, and Fusion 360 design to create hardware that’s reliable, reproducible, and cleanly executed. I like turning rough ideas into well-built systems: custom jigs, tight enclosures, clear documentation, and hardware that survives real use. I focus on practical engineering, thoughtful UX, and build workflows that scale.
+I'm Chandler, a prototype technician who enjoys turning ideas into reliable, well-built hardware. My projects combine embedded electronics, CAD, firmware, 3D printing, soldering, and mechanical assembly to create functional prototypes and low-volume production hardware.
+
+I enjoy solving practical engineering problems—designing fixtures, building clean wiring harnesses, creating robust enclosures, documenting repeatable processes, and refining prototypes until they're ready for real-world use.
+
+Most recently I supported Google's rapid prototyping organization, where I worked with PolyJet additive manufacturing, prototype finishing, hardware rework, process documentation, and lab organization. I also developed a structured Gemini prompting workflow to improve generation of manufacturable CAD models, organized and reopened the Skunkworks electrical engineering workspace, and built electromechanical demonstration hardware for internal executive projects.
+
+Previously at Ato, I owned the end-to-end hardware assembly process. During my time there I reduced errors and rework, tripled weekly production throughput, developed an ESP32-based validation fixture, introduced standardized testing procedures, and authored the company's first SOP manual.
+
+Earlier, I founded and operated World Gone Silent, designing, manufacturing, documenting, and shipping electronics kits from concept through customer delivery. That experience taught me every stage of the hardware lifecycle—from sourcing components and PCB assembly to firmware, documentation, packaging, and customer support.
+
+Today I'm looking for opportunities where I can contribute to prototype development, engineering builds, manufacturing support, and rapid iteration while continuing to expand my mechanical and embedded systems skills.
