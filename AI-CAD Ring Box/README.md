@@ -1,0 +1,100 @@
+# AI-CAD Ring Box
+
+## Overview
+My wife is a competitive Outrigger Canoe paddler, and she needs to remove her jewelry before practice for safety. She felt bad leaving her engagement ring behind, so I wanted to make a special place for her to keep it.
+I created this project solely using AI (Gemini). In seeing how poor the Gemini model was with CAD models I uploaded a series of papers by Ian Huang (https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=PTfn2rsAAAAJ) that
+proposed a better potential interface with the model. Then I trained the model to ask questions about the project and not to stop until it was perfectly clear on what was needed,
+then I had it generate the CAD model as Python code, then used the 'EditPythonScript' command in rhino to render the model, then exported a STP file and uploaded that to Grab Cad.
+
+This design required few iterations and proved the idea of using Gemini to quickly create useful CAD files to spec.
+
+## Photos
+<img src="./visual-media/ScoreboardScore.jpg" alt="Showing Score" height="200"/>
+<img src="./visual-media/ScoreboardSettings.jpg" alt="ScoreboardSettings" height="200"/>
+<img src="./visual-media/ScoreboardInUse.jpg" alt="ScoreboardInUse" height="200"/>  
+
+**Enclosure Design**<br>
+<img src="./visual-media/ScoreboardEncExploded.png" alt="Showing Score" height="200"/>
+
+## Bill of Materials
+| Item | Description | Notes |
+|------|-------------|-------|
+| ESP32 CYD Board (2.4" Display) | All-in-one ESP32 microcontroller with integrated capacitive touch TFT display | Main processing unit and display; USB powered |
+| Custom 3D-Printed Enclosure | Two-part design with base and snap-fit bezel | Printed in PLA; parametric CAD model in Fusion 360 |
+| Screws (M3 x 8mm) | Machine screws for mounting board to enclosure | Qty: 4 |
+| USB Cable (Power leads to USB-A) | Power cable wired into JST port on CYD | Routed through rear port |
+| Filament (PLA) | Material for enclosure | Color as desired - Used Yankees Blue here |
+| Adhesive Rubber Feet | Non-slip feet for enclosure stability | Qty: 4 (optional)|
+
+## Build Steps
+- Upload 'ScoreboardPrototype.ino' to the ESP32 embedded in the CYD module
+- Configure Wi-Fi access via the Captive portal
+- Print the bezel and base from the 'Scoreboard.stl' file in this project
+- Route the power and ground leads from a USB-A cable through the port on back, tie a knot into the USB cable for strain relief, then wire into the JST port
+- Screw the CYD onto the base the snap fit the bezel onto the front
+
+## Code
+- Plug in the 2.4" CYD with a micro-USB to USB-A cable, then open Arduino IDE
+- Select 'ESP32 Dev Module' and the relevant USB port
+- Upload the 'ScoreboardPrototype.ino' found in these project files to the ESP32 embedded in the CYD module
+- Watch Serial monitor for errors, then test functionality on the board to confirm all went well
+
+## Lessons Learned
+- Some Yankees games end with no bottom of 9th — needed a failsafe for final detection.
+- Display spacing and font choices are tricky on this module, and need to be tuned for clarity.
+- Adding the JST wires inside for power (instead of using the micro-USB port) made the enclosure much smaller
+- Making enclosure adjustments in Fusion 360 is brutal when the front plane is at a 60 deg angle
+
+## License
+MIT license
+
+---
+<details>
+<summary>Click here for more background and technical details about Scoreboard</summary>
+
+# More Details
+
+## Background
+I live in a New York Yankees supporting household, but often we'll be busy and unable to watch an entire game. Sometimes we just wanna know when first pitch is happening or what the score is without having to tune in or check our phones.<br>
+
+The initial idea was a module that plugged into the wall, stayed at the wall outlet, and made a sound if there was a homerun or the Yankees won. That evolved as I realized how intrusive that could be, especially in a home office. Then, I thought, maybe it'd be nice to have a small, unobtrusive device that looks totally normal on an office desk, while still letting us know the latest on the Yankees.<br>
+
+This device looks and works like a normal clock, but touching the screen on the prototype shows live info from the Yankees game. The result: a live MLB scoreboard that displays Yankees game info on an ESP32 touchscreen (CYD) with clock, Wi-Fi config, and offline persistence.
+
+## Project Goal
+A wall-outlet powered ESP32 scoreboard that:
+- Shows live Yankees game status
+- Displays box scores (R / H / E)
+- Displays current time with toggleable clock
+- Is reversible, so it can angle the display at 30 or 60 degrees
+- Supports touchscreen interaction to switch views, toggle settings, and reset the stored Wi-Fi info
+
+## Hardware
+- ESP32-3248S035R (TFT + resistive touch)
+- Backlight dimming via GPIO21
+- USB-powered; internal JST used for streamlined cable exit
+- Enclosure custom designed from scratch and built with Fusion 360
+
+## Architecture Overview
+- Coded in Arduino-style C++
+- Touch panel: Short tap toggles display mode (score ↔ clock), long-press enters settings
+- Display modes:
+    - MODE_SCOREBOARD – live game status, scores, inning, runners on base
+    - MODE_CLOCK – digital clock + date
+    - MODE_SETTINGS – flip screen, toggle clock, reset Wi-Fi
+- Data source: Live API from statsapi.mlb.com
+- Auto-reset: Refreshes at 3AM PT or after long uptime; boots in seconds
+- Wi-Fi setup: Built-in captive portal (WiFiManager) on first boot or reset
+
+## Files
+- MLB StatsAPI: https://statsapi.mlb.com
+- Full ESP32 sketch: ./firmware/ScoreboardPrototype.ino
+- Full Fusion Archive: ./cad/Scoreboard.f3d
+- STL files of enclosure and bezel: ./cad/Scoreboard.stl
+
+## Potential Future Features
+- Allow users to adjust brightness of the various displays in the settings and only with long or short screen taps
+- Allow users to follow any MLB team they want (configuring that in the CP when getting initially set up)
+- Add other sports as well (NFL, NBA, MLS, NHL, F1)
+- Add a sneaky, unobtrusive icon to the clock screen to indicate a game is currently being played
+</details>
