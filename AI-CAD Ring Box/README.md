@@ -11,9 +11,7 @@ Once generated I had it generate the CAD model as Python code, then used the 'Ed
 This design proved the idea of using Gemini to quickly create useful CAD files to spec.
 
 ## Photos
-<img src="./visual-media/RingBox1.png" alt="Open Box Showing Inner Text " height="200"/>
-<img src="./visual-media/RingBox2.jpg" alt="Showing Rounded Cone Interior for Securing Ring" height="200"/>
-<img src="./visual-media/RingBox3.jpg" alt="Watch Link Pin Used for Hinge" height="200"/>  
+<img src="./visual-media/RingBox1.png" alt="Open Box Showing Inner Text " height="200"/> <img src="./visual-media/RingBox2.jpg" alt="Showing Rounded Cone Interior for Securing Ring" height="200"/> <img src="./visual-media/RingBox3.jpg" alt="Watch Link Pin Used for Hinge" height="200"/>  
 
 
 ## Lessons Learned
