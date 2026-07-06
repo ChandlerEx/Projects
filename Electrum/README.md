@@ -16,9 +16,9 @@ Final CAD model<br>
 
 ## Lessons Learned
 - Moving the file from Fusion 360 into GrabCAD was surprisingly easy.
-- High Mix machines do double your time, but the addition of full color capability is worth it for visual items.
+- Stratasys machines configured for High Mix do double your time, but the addition of full color capability is worth it for visual items.
 - Optical clarity is a game of increased effort and decreasing returns between 90% clear and completely clear.
-- Post-processing (and potential print bed damage) need to be accounted for when prnting directly on bed without supports on bottom.
+- Post-processing (and potential print bed damage) need to be accounted for when printing directly on bed without supports on bottom.
 
 ## License
 MIT License
