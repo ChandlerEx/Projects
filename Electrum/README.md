@@ -12,8 +12,7 @@ Final CAD model<br>
 <img src="./visual-media/ElectrumCAD.png" alt="Final CAD model" width="250"/><br>
 
 
-<img src="./visual-media/ElectrumPic1.jpg" alt="Top of Coin" width="200"/>
-<img src="./visual-media/ElectrumPic3.jpg" alt="Side of Coin" width="200"/>
+<img src="./visual-media/ElectrumPic1.jpg" alt="Top of Coin" width="200"/> <img src="./visual-media/ElectrumPic3.jpg" alt="Side of Coin" width="200"/>
 
 ## Lessons Learned
 - Moving the file from Fusion 360 into GrabCAD was surprisingly easy.
