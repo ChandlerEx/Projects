@@ -9,19 +9,14 @@ Tactics used included printing directly on the bed, making the print glossy, imp
 
 ## Photos
 Final CAD model<br>
-<img src="./visual-media/ElectrumCAD.png" alt="Final CAD model" width="150"/>
-
- 
-Top of Coin <br>
-<img src="./visual-media/ElectrumPic1.jpg" alt="Top of Coin" width="250"/>
-
- 
-Angled Coin Top (Showing Clarity) <br>
-<img src="./visual-media/ElectrumPic2.jpg" alt="Angled Coin Top " width="250"/>
+<img src="./visual-media/ElectrumCAD.png" alt="Final CAD model" width="250"/><br>
 
 
-Side of Coin (Showing Encased Features) <br>
-<img src="./visual-media/ElectrumPic2.jpg" alt="Side of Coin" width="250"/>
+<img src="./visual-media/ElectrumPic1.jpg" alt="Top of Coin" width="200"/>
+
+<img src="./visual-media/ElectrumPic2.jpg" alt="Angled Coin Top " width="200"/>
+
+<img src="./visual-media/ElectrumPic3.jpg" alt="Side of Coin" width="200"/>
 
 ## Lessons Learned
 - Moving the file from Fusion 360 into GrabCAD was surprisingly easy.
